@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+.productBig{
+	margin-top: 50px;
+	width: 100%;
+	
+}
+
+.productL{
+	width: 45%;
+	float: left;
+}
+
+.productR{
+	width: 45%;
+	float: right;
+	
+}
+
+.productPic{
+	width: 50%;
+	margin-left: 50%;
+}
+

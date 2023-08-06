@@ -1,0 +1,5 @@
+package com.b66k.www.service;
+
+public class FavoriteServiceImpl implements FavoriteService{
+
+}

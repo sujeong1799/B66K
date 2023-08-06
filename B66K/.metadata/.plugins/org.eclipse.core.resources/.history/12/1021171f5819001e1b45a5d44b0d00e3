@@ -1,0 +1,11 @@
+package com.b66k.www.service;
+
+import java.util.List;
+
+import com.b66k.www.domain.FavoriteVO;
+
+public interface CartService {
+
+	List<FavoriteVO> GetList(String id);
+
+}

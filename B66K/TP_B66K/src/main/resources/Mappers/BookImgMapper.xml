@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.b66k.www.repository.BookImgDAO">
+	<insert id="registerBookImg">
+		insert into bookimg(uuid, saveDir, fileName, fileType, bno, fileSize)
+		values(#{uuid}, #{saveDir}, #{fileName}, #{fileType}, #{bno},
+		#{fileSize})
+	</insert>
+	<select id="getImgList" resultType="bivo">
+		select * from bookimg where bno = #{bno} AND fileName not LIKE('%이벤트%');
+	</select>
+	<delete id="deleteBookImg"> delete from bookimg where uuid = #{uuid} </delete>
+	<update id="updateBookImgIsDel">
+		UPDATE bookimg SET isDel = 'Y' WHERE uuid = #{uuid}
+	</update>
+	<select id="getUuidListBno" resultType="String">
+		SELECT uuid FROM bookimg WHERE bno = #{bno}
+	</select>
+	<select id="getRelationImg" resultType="bivo">
+		select * from bookimg where fileName like concat(#{title},'%') and isDel = 'N' ORDER BY
+		CAST(SUBSTRING_INDEX(fileName, ' ', -1) AS SIGNED) DESC;
+	</select>
+	<select id="getEventPic" resultType="bivo">
+		SELECT * FROM bookimg WHERE bno = #{bno} AND fileName LIKE CONCAT('%이벤트%');
+	</select>
+</mapper>

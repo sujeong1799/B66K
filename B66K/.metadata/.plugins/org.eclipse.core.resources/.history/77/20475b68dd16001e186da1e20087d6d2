@@ -1,0 +1,14 @@
+package com.b66k.www.repository;
+
+import java.util.List;
+
+import com.b66k.www.domain.FavoriteVO;
+
+public interface FavoriteDAO {
+
+	public List<FavoriteVO> GetList(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

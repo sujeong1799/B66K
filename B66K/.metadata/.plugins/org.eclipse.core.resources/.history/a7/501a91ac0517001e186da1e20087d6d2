@@ -1,0 +1,37 @@
+package com.b66k.www.service;
+
+import java.util.List;
+
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.b66k.www.domain.FavoriteVO;
+import com.b66k.www.repository.FavoriteDAO;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+@Service
+public class FavoriteServiceImpl implements FavoriteService{
+	
+	@Inject
+	private FavoriteDAO fdao;
+	
+	@Override
+	public List<FavoriteVO> GetList(String id) {
+		log.info(">>> FavoriteListDAO 진입");
+		log.info(">>> FavoriteList " + fdao.GetList(id));
+		return fdao.GetList(id);
+	}
+
+	@Override
+	public int Register(@RequestParam("bno")int bno, @RequestParam("id")String id) {
+		log.info(">>> FavoriteRegisterDAO 진입");
+		int isOk = fdao.Register(bno, id);
+		log.info(isOk > 0 ? "찜 성공" : "찜 실패");
+		return isOk;
+	}
+
+}

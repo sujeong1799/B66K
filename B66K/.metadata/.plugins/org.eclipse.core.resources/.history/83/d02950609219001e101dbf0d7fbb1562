@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+.mainBig{
+	width: 1600px;
+	
+}
+
+.mainPic{
+	width: 30%;	
+	
+}

@@ -1,0 +1,228 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0-beta3/css/all.min.css"
+	rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/resources/homeTest.css">
+<jsp:include page="../layout/header.jsp"></jsp:include>
+</head>
+<body>
+
+
+	<div id="wrap">
+
+
+		<!-- @@@@ 메인 비디오 @@@@  -->
+		<div class="movieDiv">
+			<div class="musicSoundOn" id="musicSoundOn">
+				<img src="/resources/img/sound_on.png">
+			</div>
+			<div class="musicSoundOff" id="musicSoundOff">
+				<img src="/resources/img/sound_off.png">
+			</div>
+			<div class="logo">
+				<img src="/resources/img/나의히어로아카데미아_logo.png">
+			</div>
+			<video id="mainVideo" autoplay loop muted>
+				<source src="/resources/img/나의히어로아카데미아.mp4" id="mainMovie">
+			</video>
+		</div>
+
+		<div class="movieDiv">
+			<div class="musicSoundOn" id="musicSoundOn">
+				<img src="/resources/img/sound_on.png">
+			</div>
+			<div class="musicSoundOff" id="musicSoundOff">
+				<img src="/resources/img/sound_off.png">
+			</div>
+			<div class="logo">
+				<img src="/resources/img/최애의아이_logo.png">
+			</div>
+			<video id="mainVideo" autoplay loop muted>
+				<source src="/resources/img/최애의아이.mp4" id="mainMovie">
+			</video>
+		</div>
+
+		<div class="movieDiv">
+			<div class="musicSoundOn" id="musicSoundOn">
+				<img src="/resources/img/sound_on.png">
+			</div>
+			<div class="musicSoundOff" id="musicSoundOff">
+				<img src="/resources/img/sound_off.png">
+			</div>
+			<div class="logo">
+				<img src="/resources/img/주술회전_logo.png">
+			</div>
+			<video id="mainVideo" autoplay loop muted>
+				<source src="/resources/img/주술회전.mp4" id="mainMovie">
+			</video>
+		</div>
+
+		<div class="movieDiv">
+			<div class="musicSoundOn" id="musicSoundOn">
+				<img src="/resources/img/sound_on.png">
+			</div>
+			<div class="musicSoundOff" id="musicSoundOff">
+				<img src="/resources/img/sound_off.png">
+			</div>
+			<div class="logo">
+				<img src="/resources/img/헌터헌터_logo.png">
+			</div>
+			<video id="mainVideo" autoplay loop muted>
+				<source src="/resources/img/헌터헌터.mp4" id="mainMovie">
+			</video>
+		</div>
+
+		<div class="movieDiv">
+			<div class="musicSoundOn" id="musicSoundOn">
+				<img src="/resources/img/sound_on.png">
+			</div>
+			<div class="musicSoundOff" id="musicSoundOff">
+				<img src="/resources/img/sound_off.png">
+			</div>
+			<div class="logo">
+				<img src="/resources/img/나루토_logo.png">
+			</div>
+			<video id="mainVideo" autoplay loop muted>
+				<source src="/resources/img/나루토.mp4" id="mainMovie">
+			</video>
+		</div>
+		<a class="slideButton prevButton" onclick="prevSlide()"><i
+			class="fa-solid fa-chevron-left" style="color: #cccccc;"></i></a> <a
+			class="slideButton nextButton" onclick="nextSlide()"><i
+			class="fa-solid fa-chevron-right" style="color: #cccccc;"></i></a> <br>
+		<br>
+
+
+		<!-- @@@@ 신작 슬라이드 @@@@ -->
+		<div class="homeContent">
+			<div class="newBook">
+				<span>2023년 7월 신작</span>
+				<div class="slideNewBook">
+					<i class="fa-solid fa-chevron-left slidePrevBtn" onclick="prevNewSlide()"></i>
+						<div class="slideBox">
+							<img alt="원피스"
+								src="https://image.aladin.co.kr/product/31698/75/cover500/k602833586_1.jpg">
+							<br>
+							<p>원피스 105</p>
+						</div>
+						<div class="slideBox">
+							<img alt="스킵과 로퍼"
+								src="https://image.aladin.co.kr/product/32062/98/cover500/k512834890_1.jpg">
+							<br>
+							<p>스킵과 로퍼 6</p>
+						</div>
+						<div class="slideBox">
+							<img alt="최애의 아이"
+								src="https://image.aladin.co.kr/product/32129/23/cover500/k902834308_1.jpg">
+							<br>
+							<p>최애의 아이 11</p>
+						</div>
+						<div class="slideBox">
+							<img alt="나의 히어로 아카데미아"
+								src="https://image.aladin.co.kr/product/32094/5/cover500/k962834900_1.jpg">
+							<br>
+							<p>나의 히어로 아카데미아 38</p>
+						</div>
+						<div class="slideBox">
+							<img alt="환괴지대"
+								src="https://image.aladin.co.kr/product/32143/57/cover500/k592834110_1.jpg">
+							<br>
+							<p>환괴지대 에테르의 마을</p>
+						</div>
+						<div class="slideBox">
+							<img alt="스파이 패밀리"
+								src="https://image.aladin.co.kr/product/32135/16/cover500/k292834306_1.jpg">
+							<br>
+							<p>스파이 패밀리 11</p>
+						</div>
+						<div class="slideBox">
+							<img alt="마슐"
+								src="https://image.aladin.co.kr/product/31937/39/cover500/k682833055_1.jpg">
+							<br>
+							<p>마슐 14</p>
+						</div>
+						<div class="slideBox">
+							<img alt="도쿄리벤저스"
+								src="https://image.aladin.co.kr/product/32129/61/cover500/k032834309_1.jpg">
+							<br>
+							<p>도쿄 리벤저스 31</p>
+						</div>
+						<div class="slideBox">
+							<img alt="위치 워치"
+								src="https://image.aladin.co.kr/product/32157/86/cover500/k502834418_1.jpg">
+							<br> <p>위치 워치 8</p>
+						</div>
+					<i class="fa-solid fa-chevron-right slideNextBtn" onclick="nextNewSlide()"></i>
+					</div>
+				</div>
+			</div>
+
+
+		<c:if test="${ses.id != null && ses.id eq 'admin' }">
+			<a href="/book/register"><button>상품등록</button></a>
+			<a href="/book/list"><button>상품리스트</button></a>
+			<a href="/member/admin"><button>관리자페이지</button></a>
+			<a href="/review/list">리스트뽑기</a>
+		</c:if>
+		<br> <br>
+
+		<P>TEST</P>
+
+		<a href="/book/ProdcutDetail?bno=31"> <img class="mainPic"
+			alt="사진 없다." src="/resources/img/1.jpg"></a>
+
+	</div>
+
+	<script type="text/javascript" src="/resources/js/home.js"></script>
+	<script>
+	let slideIndex = 0;
+
+	function showSlides() {
+	    const slides = document.getElementsByClassName("slideBox");
+	    const slideGroupSize = 4; // 한 그룹에 보여줄 슬라이드 개수
+	    const totalGroups = Math.ceil(slides.length / slideGroupSize);
+
+	    let startIndex = slideIndex * slideGroupSize;
+	    let endIndex = startIndex + slideGroupSize;
+
+	    // 슬라이드 그룹에 해당하는 슬라이드들만 보이도록 설정
+	    for (let i = 0; i < slides.length; i++) {
+	        if (i >= startIndex && i < endIndex) {
+	            slides[i].style.display = "block";
+	        } else {
+	            slides[i].style.display = "none";
+	        }
+	    }
+	}
+
+	function nextNewSlide() {
+	    const slides = document.getElementsByClassName("slideBox");
+	    const slideGroupSize = 4; // 한 그룹에 보여줄 슬라이드 개수
+	    const totalGroups = Math.ceil(slides.length / slideGroupSize);
+
+	    slideIndex = (slideIndex + 1) % totalGroups;
+	    showSlides();
+	}
+
+	function prevNewSlide() {
+	    const slides = document.getElementsByClassName("slideBox");
+	    const slideGroupSize = 4; // 한 그룹에 보여줄 슬라이드 개수
+	    const totalGroups = Math.ceil(slides.length / slideGroupSize);
+
+	    slideIndex = (slideIndex - 1 + totalGroups) % totalGroups;
+	    showSlides();
+	}
+
+	// 페이지 로드 시 슬라이드 초기화
+	showSlides();
+	</script>
+</body>
+</html>

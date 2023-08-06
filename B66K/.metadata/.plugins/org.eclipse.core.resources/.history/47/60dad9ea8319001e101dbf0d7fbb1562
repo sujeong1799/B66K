@@ -1,0 +1,147 @@
+== 2023 06 27 유저 및 DB, 테이블 생성
+create database B66K;
+create user 'hot6'@'localhost' identified by 'mysql';
+grant all privileges on B66K.* to 'hot6'@'localhost' with grant option;
+flush privileges;
+
+// 주문테이블
+create table Bookorder(
+ono int not null auto_increment,
+id varchar(100) not null,
+bno int not null,
+price int,
+title varchar(100),
+count int,
+total int,
+name varchar(100),
+address_code varchar(100),
+address_juso varchar(100),
+address_detail varchar(100),
+pay_type varchar(20),
+order_status varchar(20),
+etc text,
+primary key(ono)
+);
+
+// 찜목록테이블
+create table favorite(
+id varchar(100) not null,
+bno int not null,
+title varchar(100),
+price int,
+author varchar(100)
+);
+
+// 장바구니테이블
+create table cart(
+id varchar(100) not null,
+bno int not null,
+title varchar(100),
+price int,
+author varchar(100),
+count int
+);
+
+// 책 DB
+create table book(
+bno int auto_increment not null,
+author varchar(100),
+title varchar(100),
+price int,
+grade double,
+amount int,
+sale_amount int,
+primary key(bno));
+
+// 책코멘트 DB
+create table reply(
+rno int auto_increment not null,
+bno int not null,
+id varchar(100) not null,
+content text,
+reg_date datetime default now(),
+grade double,
+primary key(rno));
+
+// 책이미지 DB
+create table bookImg(
+bno int not null,
+save_path varchar(256),
+file_name varchar(256),
+primary key(bno));
+
+// 문의글 
+create table question(
+qno int auto_increment not null,
+title varchar(256),
+content text,
+reg_date datetime default now(),
+primary key(qno)
+);
+
+// 답변글
+create table answer(
+ano int auto_increment not null,
+content text,
+reg_date datetime default now(),
+primary key(ano)
+);
+
+//문의글이미지
+create table questionImg(
+uuid varchar(256) not null,
+save_path varchar(256),
+file_name varchar(256),
+file_size int,
+primary key(uuid)
+);
+
+//유저
+create table user(
+id varchar(100) not null,
+pw varchar(100) not null,
+email varchar(100),
+nickname varchar(100),
+birth varchar(100) not null,
+role varchar(20) default 'user',
+primary key(id));
+
+//유저 프로필 사진
+create table userImgFile(
+pno int auto_increment NOT NULL,
+save_path varchar(256),
+primary key(pno)
+);
+
+//한마디 게시글
+create table word(
+wno int auto_increment NOT NULL,
+content text,
+primary key(wno)
+);
+
+//한마디 캐릭터 이미지
+create table wordImg(
+cino int auto_increment NOT NULL,
+save_path varchar(256),
+primary key(cino)
+);
+
+// 부족한 속성 추가
+//bookorder db 요청사항(etc) 추가
+alter table bookorder add column etc text;
+
+//reply db에 bno, id 추가
+alter table reply add column bno int;
+alter table reply add column id varchar(100);
+ALTER TABLE reply MODIFY COLUMN bno int AFTER rno;
+ALTER TABLE reply MODIFY COLUMN id varchar(100) AFTER bno;
+
+// 2023-06-30 book db에 reg_date,isDel, sale_amount, grade default 추가
+alter table book add column reg_date datetime default now();
+alter table book modify column sale_amount int default 0;
+alter table book modify column grade double default 0;
+alter table book add column isDel varchar(50) default "N";
+
+// 2023-07-03 book db에 발매일 release 추가. 
+alter table book add column release_date date;

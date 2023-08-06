@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+.mainBig{
+	width: 100%;
+	
+}
+
+.mainL{
+	width: 45%;
+	float: left;
+}
+
+.mainR{
+	width: 45%;
+	float: right;
+	
+}
+
+.mainPic{
+	width: 50%;
+	margin-left: 50%;	
+	
+}

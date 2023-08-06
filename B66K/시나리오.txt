@@ -1,0 +1,55 @@
+VO 개수 : 7개
+DTO 개수 :  4개 (Book, Question, User, Word)
+Controller 개수 : WordController 빼고 8개
+메인도착
+1. 헤더부터 스타트(UserController) - views - user
+로그인 & 로그아웃 & 회원가입(닉네임, 아이디 중복 X) & 아이디찾기(이메일인증)
+내 정보 보기 & 수정 & 회원탈퇴
+
+2. 상품 선택시(BookController) - views - book
+상품 페이지로 이동 * 아직 만드는중.. (슬라이드 , 상세정보 남음)
+상품등록(제목, 저자, 가격, 내용, 재고(amount), 이미지) - 관리자입장 (완성)
+상품수정 & 삭제 - 관리자입장  (완성)
+평점별, 판매량별 리스트뿌리기 (평점 모양만 뿌리면 됨..ㅋ)
+상품검색 (PagingHandler) (관리자 입장은 완성)
+
+3. 찜 했을시(FavoriteController) - views - favorite
+찜목록 추가 완료 alert창
+찜목록 보기(제목, 가격, 저자) + 이미지 or 글 누르면 상품디테일로 이동
+X누르면 찜목록 빠짐(delete)
+
+4. 장바구니 담았을때 or 눌렀을때 (CartController) - views - cart
+수량 선택 후 장바구니 추가 완료 alert창
+장바구니 보기(제목, 가격, 저자, 수량)
+장바구니 물품 삭제버튼
+금액표시 (상품금액 + 배송비 = 총금액)
+수량 변경시 금액도 변경
+결제버튼 (현재 값(제목,가격,저자,수량)들 들고 bookorder로)
+
+5. 결제버튼 눌렀을때 (BookOrderController) - views - bookorder
+구매하는 상품들 보여주기(+ 총금액)
+배송받는 사람 이름, 주소입력(우편번호, 도로명주소, 상세주소), 요청사항
+결제수단 선택
+전부 채워지면 결제 => 결제완료 alert
+
+헤더의 주문내역 누르면 BookOrderDB불러와서 출력
+주문취소버튼 (delete) 하면 book sale_amount, amount 돌려놓기
+
+6. 사용자가 상품 구매후 평점댓글을 달았을때(ReplyController)  - views - book
+댓글 작성(작성자, 평점, 내용, 등록일)  (완성)
+댓글 수정(작성자 본인만 가능) (완성)
+댓글 삭제(작성자 본인 + 관리자도 가능) (완성)
+구매후 댓글 작성시 비동기로 평점(grade) 반영 (웩 완성)
+
+7. 문의게시판 눌렀을때(QuestionController) - views - question
+문의글 리스트 보여주기 (보는건 작성자 + 관리자만) 다른사람 접근시 본인만 가능합니다 alert
+문의글 작성(제목, 작성자, 작성일, 내용, 첨부파일) FileHandler 구축
+헤더에 내가 쓴 문의글 보기 누르면 검색되어 리스트 출력
+
+8. 관리자가 답변글 작성 눌렀을때(AnswerController) - views - question
+Comment 했던것처럼 answerDB에서 가져와서 출력
+answer 등록 (내용, 등록일) 작성자는 "관리자" 라고 고정
+관리자는 문의게시판에서 검색기능 사용가능(사용자 id 검색하면 그 사람 글만 보임)
+
+9. 한마디게시판 눌렀을때(WordController)
+... 미정

@@ -1,0 +1,593 @@
+@charset "UTF-8";
+
+
+* {
+	box-sizing: border-box;
+}
+
+*::after::before {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.ProductMain {
+	width: 1100px;
+	margin: 0 auto;
+}
+
+.ProductTitle {
+	width: 1000px;
+	height: 650px;
+	margin: 50px 50px 0px;
+}
+
+.ProductPic {
+	width: 500px;
+	height: 600px;
+	display: inline-block;
+}
+
+.titlePic {
+	width: 450px;
+	height: 600px;
+	margin: 0 20px;
+	border: 1px solid #dddddd;
+}
+
+.ProductInfo {
+	width: 500px;
+	height: 600px;
+	background-color: white;
+	display: inline-block;
+	float: right;
+}
+
+.Info {
+	width: 450px;
+	height: 600px;
+	margin: 0 25px;
+}
+.Info > h1 {
+	cursor: default;
+}
+
+.InfoFont {
+	font-size: 16px;
+	cursor: default;
+}
+
+.ProductBox {
+	height: 70px;
+	font-size: 16px;
+}
+
+.ProductBox > td{
+	width: 350px;
+}
+
+.ProductBox2{
+	height: 70px;
+}
+
+
+
+
+.ProductContent {
+	width: 1000px;
+	margin: 0 50px;	
+}
+
+.favoriteIcon{
+	padding-top: 10px;
+}
+
+
+
+/* 슬라이드 구현 */
+
+.slide_wrapper{
+	width:1000px;
+	position: relative;
+}
+
+.slide_wrapper i{
+	box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+	height: 46px;
+	width: 46px;
+	cursor: pointer;
+	font-size: 1.2rem;
+	text-align: center;
+	line-height: 46px;
+	background: #fff;
+	opacity: 0.8;
+	border-radius: 50px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+
+}
+
+ .slide_wrapper i:first-child{
+	left: 0px;
+
+}
+
+.slide_wrapper i:last-child{
+	right: 0px;
+
+}
+
+.carousel {
+	width: 890px;
+	height: 340px;
+	margin: 0 auto;
+	overflow: hidden;
+	cursor: pointer;
+	white-space: nowrap;
+    transition: transform 0.3s ease;
+	scroll-behavior: smooth;
+	
+}
+
+#NameList > a {
+	text-decoration: none;
+	color: black;
+}
+
+.ImgList{
+
+	display: inline-block;
+	margin: 10px 0px 10px 8px;
+	order;
+	
+}
+.ImgList img{
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+	width: 210px;
+	height: 300px; 
+}
+
+.ImgList:first-child{
+	margin-left: 10px;
+}
+.ImgList:last-child{
+	margin-right: 10px;
+} 
+
+
+
+/* 슬라이드 끗  */
+
+
+
+
+.ProductDetail {
+	widows: 900px;
+	margin: 0 50px;
+}
+
+/* book Content 시작 */
+
+.BookEvent{
+	width: 900px;
+	height: 220px;
+}
+
+.BookEventImg{
+	width: 430px;
+	height: 220px;
+	margin: 0 8px; 
+}
+
+.BookIntro{
+	width: 900px;
+		
+}
+
+.BookIntro > p{
+	margin-top: 10px;
+	font-size: 20px;
+	font-weight: bold;
+	cursor: default;
+}
+
+.BookIntro > hr{
+	color: gray;
+}
+
+.contentPage{
+	white-space:pre-wrap;
+	border: none;
+}
+.contentPage:focus{
+	outline: none;
+}
+
+.bookEventBox{
+	text-align: center;
+}
+.bookEventBox > hr{
+	margin: 10px 0;
+}
+
+.bookEventPic{
+	width: 700px;
+}
+
+/* bookContent 끗 */
+
+
+/* 리뷰 css 시작 */
+
+
+.ProductReview {
+	width: 1100px;
+	margin: 0 auto;
+}
+
+
+.ReviewBox{
+	width: 900px;
+	margin: 0 auto;
+}
+
+.ReviewBox > p {
+	margin-top: 10px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#reviewCount{
+	cursor: default;
+}
+
+.starIncon2{
+	cursor: default;
+}
+.ratingAvg{
+	margin: 0 auto;
+}
+
+.ReviewWriteBox{
+	box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+	width: 900px;
+	height: 200px;
+	margin: 0 auto;
+	background-color: #f8f8f8;
+	border-radius: 20px;
+}
+
+ /* 별 아이콘 스타일 설정 */
+
+.star-rating {
+  display:flex;
+  flex-direction: row-reverse;
+  font-size:3em;
+  justify-content:space-around;
+  padding:0 0.2em;
+  text-align:center;
+  width:5em;
+  margin: 0 auto;
+}
+
+.star-rating input {
+  display:none;
+}
+
+.star-rating label {
+  color: #EAEAEA;
+  cursor:pointer;
+  
+}
+
+ .star-rating :checked ~ label {
+  color:gold;
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+  color:gold;
+}
+
+.fas{
+	color: gold;
+}
+
+.fa-star{
+	color: gold;
+}
+
+
+
+.ReviewComment{
+	margin: 0 auto;
+
+}
+.ReviewComment > span {
+	display: none;
+	cursor: default;
+}
+
+#revText{
+	border-radius: 10px;
+	border: 0.5px solid gray;
+	resize: none;
+	text-indent: 5px;
+}
+.revText > button{
+	width:100px;
+	height: 75px;
+	margin-top: -70px;
+}
+
+
+
+.reviewId{
+	width: 900px;
+	padding: 0;
+}
+
+.reviewAreaBox{
+box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+	width: 700px;
+	height: 90px;
+	margin: 10px auto;
+	padding: 10px 30px;	
+	border-radius: 20px;
+}
+
+
+#revListArea {
+  margin: 0px 0px;
+  padding: 0px 0px;
+  width: 900px;
+  height: auto;
+  overflow: hidden; /* 내용이 넘칠 경우 스크롤이 생기지 않도록 hidden으로 설정 */
+}
+
+
+.moreReview{
+	box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+	width: 700px;
+	height: 50px;
+	margin: 10px 100px;
+	border: none;
+}
+.moreReview:hover{
+	font-weight:bold;
+	color: #4375DB;
+}
+
+.delBtn{
+	float: right;
+	border: none;
+}
+
+.starRating{
+	color: gold;
+}
+
+.regDate{
+	color: gray;
+}
+
+.rvoId{
+	color: #7196e3;
+}
+
+.ReviewZero{
+	text-align: center;	
+}
+
+/* 리뷰 css 끝 */
+
+/* claim 시작 */
+
+ul, li {
+	cursor: default;
+}
+
+.claim{
+	width: 900px;
+	margin: 0 auto;
+}
+
+.tableLine{
+	border-bottom: 1px solid #e5e5e5;
+	border-top: 1px solid #e5e5e5;
+	
+}
+
+.tableLine > th {
+	text-align:center;
+	width: 200px;
+	border-right: 1px solid #e5e5e5;
+	background-color: #f8f8f8;
+}
+
+.tableLine > td {
+	width: 700px;
+	font-size: 14px;
+	padding-right: 20px;
+} 
+.tableLine > td > ul{
+	margin-top: 16px;
+}
+.tableLine > td > ul > li{
+	margin: 3px;
+}
+
+
+/* claim 끗 */
+
+
+th, td{
+	cursor: default;
+}
+
+.PostAdd {
+	width: 300px;
+	border: none;
+	outline: none;
+	cursor: default;
+}
+
+#delivery{
+	font-weight: bold;
+}
+
+.PostBtn {
+	text-decoration: none;
+	font-size: 16px;
+	color: black;
+	cursor: default;
+}
+
+
+.dep {
+	width: 150px;
+	height: 70px;
+}
+
+.btnBox{
+	width: 450px;
+	height: 200px;
+	
+}
+
+.FavoritBtn {
+	width: 50px;
+	height: 50px;
+	margin-right: 10px;
+	background-color: white;
+	border: 1px solid rgb(221, 221, 221)
+}
+
+.CartBtn {
+	background-color: white;
+	width: 400px;
+	height: 50px;
+	border: 1px solid rgb(221, 221, 221)
+}
+
+.favoritBox{
+	display: flex;
+}
+
+.FavoritBtn > span{
+	color: red;
+	cursor: default;
+}
+
+.cartBox{
+	display: flex;
+}
+
+
+
+/* 팝업 */
+
+#popup {
+   position: fixed;
+   z-index: 30;
+   padding-top: 100px;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   overflow: auto;
+   background-color: rgba(0, 0, 0, 0.4);
+   display: none;
+   animation: fadeIn 0.3s ease-in-out;
+   
+}
+
+    @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+
+    @keyframes fadeOut {
+        0% { opacity: 1; }
+        100% { opacity: 0; }
+    }
+    
+.popup_content {
+   width: 350px;
+   height: 120px;
+   padding: 30px 30px;
+   margin: 0 auto;
+   border: 1px solid #777;
+   background-color: #fff;
+   padding: 0;
+   box-sizing: border-box;
+   border-radius: 5px;
+   margin-top: 250px;
+   
+   z-index: 30;
+
+   
+}
+
+.popupModalTitle {
+
+   margin: 0 auto;
+   text-align: center;
+   font-size: 16px;
+   left: 10px;
+   margin-top: 40px;
+   
+   z-index: 30;
+}
+
+.popupCloseBtn {
+   border-top : 1px solid #212529;
+   cursor: pointer;
+   font-size: 20px;
+   background-color: #212529;
+   color: white;
+   height : 50px;
+   margin-top: 40px;
+   border-radius: 0px 0px 5px 5px;
+   
+   z-index: 30;
+}
+
+.popupCloseText{
+   margin-top: 7px;
+   
+   z-index: 30;
+}
+
+
+
+.eventTop {
+   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 50px;
+    margin-right: 50px;
+    margin-bottom:20px;
+    font-size: 25px;
+    right: 0;
+    z-index: 10000;
+    margin-left: auto;
+    color: #bcbcbc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255,255,255,.9);
+   border: none;
+    cursor: pointer;
+    outline: 0;
+    border-radius: 29px;
+    transition: opacity .4s ease,pointer-events .4s ease,transform .4s ease;
+}
+
+
+

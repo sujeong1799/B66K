@@ -1,0 +1,396 @@
+@charset "UTF-8";
+
+.nav {
+	
+	width: 100%;
+	height: 50px;
+	border : 1px solid black;
+	background-color: black;
+	
+}
+
+a{
+	text-decoration: none;
+}
+
+body{
+   margin: 0;
+   padding: 0;
+}
+
+input {
+
+	border-left-width: 0;
+	border-right-width: 0;
+	border-top-width: 0;
+	border-bottom-width: thin;
+	border-color: #969696;
+	font-size: 15px;
+}
+
+input:focus{
+	outline: none;
+}
+
+input:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0 1000px white inset;
+	box-shadow: 0 0 0 1000px white inset;
+}
+
+.wrap{
+	
+	position : relative;
+	margin: 0 auto;
+	margin-top : 100px;
+	width: 500px;
+	height: 800px;
+	/* background-color: yellow; */
+	
+}
+
+.findIdtextArea{
+	position: relative;
+	width: 500px;
+	height: 300px;
+	cursor: default;
+	
+	/* background-color: green; */
+	
+}
+
+.findIdText1{
+	position: relative;
+	font-size: 35px;
+	text-align: center;
+
+}
+
+.findIdText2{
+	position: relative;
+	font-size: 13px;
+	/* text-align: center; */
+	top : 8px;
+	color: #969696;
+
+}
+
+.findIdText3{
+	font-size: 15px;
+}
+
+#line{
+	position : relative;
+	height: 2px;
+	width : 500px;
+	border : 0;
+	background: #9C9C9D;
+/* 	top: 5px; */
+}
+
+.emailArea{
+	
+	position: absolute;
+	width: 500px;
+	height: 200px;
+	/* background-color: red; */
+	top: 210px;
+}
+
+.emailInputArea{
+	
+	position : absolute;
+	width: 500px;
+	height: 70px;
+	left: 10px;
+	/* background-color: blue; */
+	
+}
+
+.emailInput{
+	position : absolute;
+	width: 350px;
+	height: 40px;
+	padding-left: 10px;
+	bottom: 15px;
+	
+}
+
+.SearchBtn{
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	width: 130px;
+	height: 45px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	
+	background-color: #212529;
+	color: white;
+	
+}
+
+.emailAuthArea{
+	position: absolute;
+	/* background-color: black; */
+	width: 500px;
+	height: 70px;
+	top: 90px;
+	left: 10px;
+}
+
+.authInput{
+	position : absolute;
+	height: 40px;
+	width: 350px;
+	padding-left: 10px;
+	
+	
+}
+
+.SearchIDBtn{
+	position: absolute;
+	right: 10px;
+	width: 130px;
+	height: 45px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	
+	background-color: #212529;
+	color: white;
+}
+
+.info{
+	position : absolute;
+	/* background-color: gray; */
+	width: 500px;
+	height: 200px;
+	
+}
+
+.findIdInfo{
+	
+	font-size: 10px;
+}
+
+.btnArea{
+	position : relative;
+	width: 100%;
+	height: 70px;
+	/* background-color: black; */
+	top: 90px;
+}
+
+/* .pwSearchBtn{
+	position: absolute;
+	width: 150px;
+	height: 40px;
+	bottom : 50px;
+	left: 50px;
+	border: none;
+	cursor: pointer;
+	
+} */
+
+.pwButton {
+  display: inline-flex;
+  width: 220px;
+  height: 50px;
+  border: 1px solid #BCBCBC;
+  margin: 20px 20px 20px 20px;
+  color: #BFC0C0;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: .8em;
+  letter-spacing: 1.5px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.pwButton:hover{
+
+	 background-color: #faa307;
+	 transition : background-color 1s ease-out;
+}
+
+
+
+.search{
+  width: 15px;
+  height: 10px;
+  position: absolute;
+  transform: translateX(60px);
+  opacity: 0;
+  -webkit-transition: all .25s cubic-bezier(.14, .59, 1, 1.01);
+  transition: all .15s cubic-bezier(.14, .59, 1, 1.01);
+  margin: 0;
+  padding: 0 5px;
+}
+
+a#pwSearchBtn:hover .search {
+  width: 15px;
+  opacity: 1;
+  transform: translateX(65px);
+  margin-bottom: 10px;
+  color: #212529;
+  
+}
+
+a:hover{
+	color: black;
+}
+
+/* .pwButton > span:hover{
+	color: black;
+} */
+
+.pwSearchText{
+	color: #212529;
+	font-size: 15px;
+}
+
+
+/*===  */
+/* .homeBtn{
+	position: absolute;
+	width: 150px;
+	height: 40px;
+	bottom: 50px;
+	right: 50px;
+	border :none;
+	cursor: pointer;
+	
+} */
+
+
+.homeButton {
+  display: inline-flex;
+  width: 220px;
+  height: 50px;
+  border: 1px solid #BCBCBC;
+  margin: 20px 0px 20px 0px;
+  color: #BFC0C0;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: .8em;
+  letter-spacing: 1.5px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  
+
+}
+
+.homeButton:hover{
+
+	 background-color: #faa307;
+	 transition : background-color 1s ease-out;
+}
+
+.home{
+  width: 15px;
+  height: 10px;
+  position: absolute;
+  transform: translateX(60px);
+  opacity: 0;
+  -webkit-transition: all .25s cubic-bezier(.14, .59, 1, 1.01);
+  transition: all .15s cubic-bezier(.14, .59, 1, 1.01);
+  margin: 0;
+  padding: 0 5px;
+}
+
+a#homeBtn:hover .home {
+  width: 15px;
+  opacity: 1;
+  transform: translateX(60px) translateY(-1px);
+  margin-bottom: 10px;
+  color: #212529;
+ /*  background-color: #faa307; */
+  
+}
+
+a:hover{
+	color: black;
+}
+
+/* .pwButton > span:hover{
+	color: black;
+} */
+
+.homeText{
+	color: #212529;
+	font-size: 15px;
+}
+
+
+
+
+
+#searchIdPopup {
+	position: fixed;
+	z-index: 1;
+	padding-top: 100px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.4);
+	display: none;
+	animation: fadeIn 0.3s ease-in-out;
+	
+}
+
+    @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+
+    @keyframes fadeOut {
+        0% { opacity: 1; }
+        100% { opacity: 0; }
+    }
+    
+.searchIdPopup_content {
+	width: 350px;
+	height: 120px;
+	padding: 30px 30px;
+	margin: 0 auto;
+	border: 1px solid #777;
+	background-color: #fff;
+	padding: 0;
+	box-sizing: border-box;
+	border-radius: 5px;
+	margin-top: 250px;
+
+	
+}
+
+.searchIdModalTitle {
+
+	margin: 0 auto;
+	text-align: center;
+	font-size: 16px;
+	left: 10px;
+	margin-top: 40px;
+}
+
+.searchIdCloseBtn {
+	border-top : 1px solid #212529;
+	cursor: pointer;
+	font-size: 20px;
+	background-color: #212529;
+	color: white;
+	height : 50px;
+	margin-top: 40px;
+	border-radius: 0px 0px 5px 5px;
+}
+
+.searchIdCloseText{
+	margin-top: 7px;
+}
+
+
+

@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+* {
+  box-sizing: border-box;
+}
+
+*::after::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.adminContent{
+	    width: 100%;
+	    height: 860px;
+}
+
+.adminBox{
+	width:800px;
+	height: 860px;
+	margin: 0px 600px;
+}
+
+
+.adminBox > span{
+	font-size: 30px;
+	color: #212529;
+	font-weight: bold;
+}

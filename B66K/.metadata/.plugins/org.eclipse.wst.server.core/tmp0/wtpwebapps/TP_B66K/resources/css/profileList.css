@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.profileList {
+	width: 100%;
+	min-height: 860px;
+	margin-top: 50px;
+}
+
+.profileBox {
+	width: 800px;
+	margin: 0px 600px;
+}
+
+/* .profileBox > p{
+   font-size: 30px;
+   color: #212529;
+   font-weight: bold;
+} */
+.registerBtn {
+	width: 150px;
+	height: 40px;
+	color: white;
+	background-color: #212529;
+	border: none;
+	border-radius: 4px;
+	margin-top: 20px;
+	box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px
+		5px 10px;
+	position: absolute;
+	left: 800px;
+	top: 100px;
+}
+
+.container {
+	display: flex;
+}
+
+.container p {
+	font-size: 30px;
+	color: #212529;
+	font-weight: bold;
+	flex: 1;
+	cursor: default;
+}
+
+.imgBox {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+}
+
+.profile_img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 0;
+	opacity: 0;
+	pointer-events: none;
+}

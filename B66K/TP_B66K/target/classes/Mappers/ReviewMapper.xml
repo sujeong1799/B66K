@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.b66k.www.repository.ReviewDAO">
+<insert id="register">
+insert into review(bno, id, content, rating)
+values(#{bno}, #{id}, #{content}, #{rating})
+</insert>
+<select id="list" resultType="rvo">
+select * from review where bno = #{bno} order by reg_date desc
+</select>
+<delete id="remove">
+delete from review where rno = #{rno}
+</delete>
+<select id="getRatingAvg" resultType="double">
+select avg(rating) from review where bno = #{bno}
+</select>
+<update id="updateRating">
+update book set ratingAvg = #{ratingAvg} where bno = #{bno}
+</update>
+<update id="resetRating">
+update book set ratingAvg = 0.0 where bno = #{bno}
+</update>
+<select id="selectBno" resultType="int">
+select bno from review where rno = #{rno};
+</select>
+<select id="listAll" resultType="rvo">
+select * from review
+</select>
+	<sql id="search">
+		<if test="type != null">
+			<trim prefix="and (" suffix=")" prefixOverrides="OR">
+				<foreach collection="typeToArray" item="type">
+					<trim prefix="OR">
+						<choose>
+							<when test="type == 'i'.toString()">
+								title like concat('%', #{keyword}, '%')
+							</when>
+							<when test="type == 'c'.toString()">
+								author like concat('%', #{keyword}, '%')
+							</when>
+						</choose>
+					</trim>
+				</foreach>
+			</trim>
+		</if>
+	</sql>
+</mapper>

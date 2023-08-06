@@ -1,0 +1,298 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0-beta3/css/all.min.css"
+	rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/resources/css/home.css">
+<jsp:include page="./layout/header.jsp"></jsp:include>
+</head>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+<body>
+
+	<div id="wrap">
+
+
+		<!-- @@@@ 메인 비디오 @@@@  -->
+		<div class="movieDiv">
+			<div class="musicSoundOn" id="musicSoundOn">
+				<img src="/resources/img/sound_on.png">
+			</div>
+			<div class="musicSoundOff" id="musicSoundOff">
+				<img src="/resources/img/sound_off.png">
+			</div>
+			<div class="logo">
+				<a href="/book/ProductDetail?bno=76"><img src="/resources/img/나의히어로아카데미아_logo.png"></a>
+			</div>
+			<a href="/book/ProductDetail?bno=76"><video id="mainVideo" autoplay loop muted>
+				<source src="/resources/img/나의히어로아카데미아.mp4" id="mainMovie">
+			</video></a>
+		</div>
+
+		<div class="movieDiv">
+			<div class="musicSoundOn" id="musicSoundOn">
+				<img src="/resources/img/sound_on.png">
+			</div>
+			<div class="musicSoundOff" id="musicSoundOff">
+				<img src="/resources/img/sound_off.png">
+			</div>
+			<div class="logo">
+				<img src="/resources/img/최애의아이_logo.png">
+			</div>
+			<video id="mainVideo" autoplay loop muted>
+				<source src="/resources/img/최애의아이.mp4" id="mainMovie">
+			</video>
+		</div>
+
+		<div class="movieDiv">
+			<div class="musicSoundOn" id="musicSoundOn">
+				<img src="/resources/img/sound_on.png">
+			</div>
+			<div class="musicSoundOff" id="musicSoundOff">
+				<img src="/resources/img/sound_off.png">
+			</div>
+			<div class="logo">
+				<img src="/resources/img/주술회전_logo.png">
+			</div>
+			<video id="mainVideo" autoplay loop muted>
+				<source src="/resources/img/주술회전.mp4" id="mainMovie">
+			</video>
+		</div>
+
+		<div class="movieDiv">
+			<div class="musicSoundOn" id="musicSoundOn">
+				<img src="/resources/img/sound_on.png">
+			</div>
+			<div class="musicSoundOff" id="musicSoundOff">
+				<img src="/resources/img/sound_off.png">
+			</div>
+			<div class="logo">
+				<img src="/resources/img/헌터헌터_logo.png">
+			</div>
+			<video id="mainVideo" autoplay loop muted>
+				<source src="/resources/img/헌터헌터.mp4" id="mainMovie">
+			</video>
+		</div>
+
+		<div class="movieDiv">
+			<div class="musicSoundOn" id="musicSoundOn">
+				<img src="/resources/img/sound_on.png">
+			</div>
+			<div class="musicSoundOff" id="musicSoundOff">
+				<img src="/resources/img/sound_off.png">
+			</div>
+			<div class="logo">
+				<img src="/resources/img/나루토_logo.png">
+			</div>
+			<video id="mainVideo" autoplay loop muted>
+				<source src="/resources/img/나루토.mp4" id="mainMovie">
+			</video>
+		</div>
+		<a class="slideButton prevButton" onclick="prevSlide()"><i
+			class="fa-solid fa-chevron-left" style="color: #cccccc;"></i></a> <a
+			class="slideButton nextButton" onclick="nextSlide()"><i
+			class="fa-solid fa-chevron-right" style="color: #cccccc;"></i></a> <br>
+		<br>
+
+
+		<!-- @@@@ 신작 슬라이드 @@@@ -->
+
+
+		<div class="homeContent">
+			<div class="newBook">
+				<div class="newBookText">
+					<span>2023년 7월 신작</span>
+				</div>
+				<div class="slideNewBook">
+					<i class="fa-solid fa-chevron-left slidePrevBtn"
+						onclick="prevNewSlide()"></i>
+					<c:forEach items="${monthlylist}" var="bdto">
+						<div class="slideBox">
+							<a href="/book/ProductDetail?bno=${bdto.bvo.bno}"><img
+								class="titlePic" alt="표지가 없어요"
+								src="/upload/${fn: replace(bdto.bivo.saveDir, '\\','/')}/${bdto.bivo.uuid }_${bdto.bivo.fileName}"></a>
+							<p>${bdto.bvo.title }</p>
+						</div>
+
+					</c:forEach>
+					<i class="fa-solid fa-chevron-right slideNextBtn"
+						onclick="nextNewSlide()"></i>
+				</div>
+			</div>
+			<br> <br> <br>
+			<div class="rankArea">
+				<div class="rankCover">
+					<hr>
+					<div class="rankSide">
+						<p>RANKING</p>
+						<div class="rankCategory">
+							<div class="saleAmountRankName">
+								<span id="saleAmountRank" onclick="showSalesRank()">판매순</span>
+							</div>
+							<div class="ratinAvgRankName">
+								<span id="ratingAvgRank" onclick="showRatingRank()">평점순</span>
+							</div>
+							<div class="reviewRankName">
+								<span id="reviewRank" onclick="showReviewRank()">리뷰순</span>
+							</div>
+						</div>
+					</div>
+					<div class="saleAmountRank">
+						<div class="saleAmountContent">
+							<div class="imgBox">
+								<div class="rank">
+									<img alt="순위없음" src="/resources/img/rank1.png">
+								</div>
+								<div class="rank">
+									<img alt="순위없음" src="/resources/img/rank2.png">
+								</div>
+								<div class="rank">
+									<img alt="순위없음" src="/resources/img/rank3.png">
+								</div>
+								<div class="rank">
+									<img alt="순위없음" src="/resources/img/rank4.png">
+								</div>
+								<div class="rank">
+									<img src="/resources/img/rank5.png">
+								</div>
+							</div>
+
+							<c:forEach items="${salelist}" var="bdto">
+								<div class="saleAmountBox">
+									<a href="/book/ProductDetail?bno=${bdto.bvo.bno}"> <img
+										class="titlePic" alt="표지가 없어요"
+										src="/upload/${fn: replace(bdto.bivo.saveDir, '\\','/')}/${bdto.bivo.uuid }_${bdto.bivo.fileName}"></a>
+									<p>${bdto.bvo.title }</p>
+								</div>
+							</c:forEach>
+						</div>
+					</div>
+					<div class="ratingAvgRank">
+						<div class="ratingAvgContent">
+							<div class="imgBox">
+								<div class="rank1">
+									<img alt="순위없음" src="/resources/img/rank1.png">
+								</div>
+								<div class="rank1">
+									<img alt="순위없음" src="/resources/img/rank2.png">
+								</div>
+								<div class="rank1">
+									<img alt="순위없음" src="/resources/img/rank3.png">
+								</div>
+								<div class="rank1">
+									<img alt="순위없음" src="/resources/img/rank4.png">
+								</div>
+								<div class="rank1">
+									<img src="/resources/img/rank5.png">
+								</div>
+							</div>
+							<c:forEach items="${ratinglist}" var="bdto">
+								<div class="ratingAvgBox">
+									<a href="/book/ProductDetail?bno=${bdto.bvo.bno}"><img
+										class="titlePic" alt="표지가 없어요"
+										src="/upload/${fn: replace(bdto.bivo.saveDir, '\\','/')}/${bdto.bivo.uuid }_${bdto.bivo.fileName}"></a>
+									<p>${bdto.bvo.title }</p>
+								</div>
+							</c:forEach>
+						</div>
+					</div>
+					<div class="reviewRank">
+						<div class="reviewContent">
+							<div class="imgBox2">
+								<div class="rank2">
+									<img alt="순위없음" src="/resources/img/rank1.png">
+								</div>
+								<div class="rank2">
+									<img alt="순위없음" src="/resources/img/rank2.png">
+								</div>
+								<div class="rank2">
+									<img alt="순위없음" src="/resources/img/rank3.png">
+								</div>
+								<div class="rank2">
+									<img alt="순위없음" src="/resources/img/rank4.png">
+								</div>
+								<div class="rank2">
+									<img src="/resources/img/rank5.png">
+								</div>
+							</div>
+							<c:forEach items="${reviewlist}" var="bdto">
+								<div class="reviewBox">
+									<a href="/book/ProductDetail?bno=${bdto.bvo.bno}"><img
+										class="titlePic" alt="표지가 없어요"
+										src="/upload/${fn: replace(bdto.bivo.saveDir, '\\','/')}/${bdto.bivo.uuid }_${bdto.bivo.fileName}"></a>
+									<p>${bdto.bvo.title }</p>
+								</div>
+							</c:forEach>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<br>
+
+		<div class="calendarArea">
+			<hr>
+			<div id='calendar' class="calendar"></div>
+
+		</div>
+
+
+
+		<div class="mainEventPic">
+			<a href="/book/event"><img alt=""
+				src="resources/img/메인_이벤트_화산귀환.png"></a> <a href="/book/event2"><img
+				alt="" src="resources/img/메인_이벤트_최애의아이.png"></a>
+		</div>
+	</div>
+
+	<jsp:include page="./layout/footer.jsp"></jsp:include>
+	<script type="text/javascript" src="/resources/js/home.js"></script>
+
+	<script
+		src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			var calendarEl = document.getElementById('calendar');
+			var calendar = new FullCalendar.Calendar(calendarEl, {
+				initialView : 'dayGridMonth',
+				contentHeight : 600, // 주석 처리 또는 제거
+				aspectRatio : 1.2,
+				editable : true,
+
+				events : [ {
+					title : '마슐 14',
+					start : '2023-07-26',
+					url : '/book/ProductDetail?bno=47'
+				}, {
+					title : '최애의 아이 11',
+					start : '2023-07-31',
+					url : '/book/ProductDetail?bno=45'
+
+				}, {
+					title : '스킵과 로퍼 6',
+					start : '2023-07-25',
+					url : '/book/ProductDetail?bno=46'
+				}, {
+					title : 'event4',
+					start : '2010-01-09T12:30:00',
+					allDay : false
+				},
+
+				],
+				eventClick : function(info) {
+					window.location.href = info.event.url; // 괄호 추가
+				}
+			});
+			calendar.render();
+		});
+	</script>
+</body>
+</html>

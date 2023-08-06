@@ -1,0 +1,118 @@
+@charset "UTF-8";
+
+body{
+   margin: 0;
+   padding: 0;
+}
+
+.searchMainTitle{
+   
+   font-size: 40px;
+   margin-top : 50px;
+   margin-left: 760px;   
+}
+
+.searchContent{
+   width: 100%;
+ /*   background-color: red; */
+}
+
+.searchBox{
+   width: 1000px;
+   height: 850px;
+  /*  background-color: green;  */
+   margin: 0 auto;
+}
+
+.searchBoxTextArea{
+   width: 550px;
+   height: 90px;
+   /* background-color: gray; */
+   margin: 0 auto;
+      
+position: absolute;
+   top: 300px;
+   left: 700px;
+}
+
+.searchBoxText{
+   
+   
+   font-size: 35px;
+   z-index: 30;
+   cursor: default;
+   
+}
+
+.searchListImg{
+   opacity: 0.2;
+/*     position: absolute;
+   left: 60px;
+   top: -100px;  */
+
+margin-left: 300px;
+margin-top: 60px;
+   
+}
+
+.recommendBox{
+   width: 1000px;
+   background-color: yellow;
+   position: absolute;
+   top: 600px;
+}
+
+.recommendBox > p {
+   font-size: 15px;
+   text-align: center;
+}
+
+.recommendBox:first-child{
+   font-size: 20px;   
+}
+
+.recommendContent{
+   width: 100%;
+   background-color: white;
+}
+
+/* 검색결과가 있을때 화면 */
+
+.searchBox2{
+   width: 1100px;
+   background-color: pink; 
+   margin: 0 auto;
+   
+}
+
+.searchResult{
+   width: 1000px;
+   display: inline-block;
+      margin-left: 85px;
+      margin-top: 50px;
+
+}
+
+.searchResultBox{
+   width: 220px;
+   height: 400px;
+   display: inline-block;
+   margin-right: 20px;
+   margin-top: 10px;
+}
+
+.titlePic{
+   width: 200px;
+   height: 280px;
+}
+
+.content{
+   margin-top : 10px;
+   width: 220px;
+   height: 90px;
+
+}
+
+.content span {
+      margin: 0 auto;
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybist.org//DTD Mapper 3.0//EN"
+	"https://mybatis.org/dtd/mybatis-3-mapper.dtd/">
+<mapper namespace="com.b66k.www.repository.UserImgDAO">
+<insert id="userImgRegister">
+	insert into UserImg (uuid, saveDir, fileName, fileType, fileSize) 
+	values(#{uuid}, #{saveDir}, #{fileName}, #{fileType}, #{fileSize})
+</insert>
+<select id="getUserImgList" resultType="uivo">
+	select * from UserImg 
+</select>
+<select id="getCharacterList" resultType="uivo">
+	select * from UserImg where fileName like concat('%', #{title}, '%') order by regDate asc
+</select>
+<select id="getUserImg" resultType="uivo">
+	select * from userImg where uuid = #{uuid}
+</select>
+</mapper>

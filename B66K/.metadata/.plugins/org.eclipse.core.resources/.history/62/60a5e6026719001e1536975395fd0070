@@ -1,0 +1,25 @@
+package com.b66k.www.service;
+
+import java.util.List;
+
+import com.b66k.www.domain.BookVO;
+import com.b66k.www.domain.PagingVO;
+
+public interface BookService {
+
+	int register(BookVO bvo);
+
+	List<BookVO> list(PagingVO pvo);
+
+	BookVO detail(int bno);
+
+	int modify(BookVO bvo);
+
+	int delete(int bno);
+
+	int totalCount(PagingVO pvo);
+
+
+
+
+}

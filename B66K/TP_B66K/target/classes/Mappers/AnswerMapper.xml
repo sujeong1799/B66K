@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.b66k.www.repository.AnswerDAO">
+
+<insert id="postAnswer">
+insert into answer (qno, content)
+values(#{qno},#{content})
+</insert>
+
+<select id="AnswerList" resultType="com.b66k.www.domain.AnswerVO">
+select * from answer where qno = #{qno}
+</select>
+
+<update id="editList">
+update answer set content = #{content}, regDate=now() where ano = #{ano}
+</update>
+
+
+<delete id="delete">
+delete from answer where ano = #{ano}
+</delete>
+
+
+</mapper>
+
+

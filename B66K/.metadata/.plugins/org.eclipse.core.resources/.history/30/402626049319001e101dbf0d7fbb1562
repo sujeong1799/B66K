@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+.mainBig{
+	width: 1600px;
+	
+}
+
+.mainLeft{
+	float: left;
+}
+
+.mainRight{
+	
+}
+
+.mainPic{
+	width: 500px;	
+	
+}

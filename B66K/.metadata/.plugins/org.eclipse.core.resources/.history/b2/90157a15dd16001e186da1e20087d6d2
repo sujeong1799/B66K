@@ -1,0 +1,21 @@
+package com.b66k.www.service;
+
+import java.util.List;
+
+import javax.inject.Inject;
+
+import com.b66k.www.domain.FavoriteVO;
+import com.b66k.www.repository.FavoriteDAO;
+
+public class FavoriteServiceImpl implements FavoriteService{
+	
+	@Inject
+	private FavoriteDAO fdao;
+	
+	@Override
+	public List<FavoriteVO> Getlist(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

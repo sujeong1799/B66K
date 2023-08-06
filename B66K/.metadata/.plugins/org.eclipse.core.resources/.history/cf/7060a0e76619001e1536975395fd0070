@@ -1,0 +1,24 @@
+package com.b66k.www.repository;
+
+import java.util.List;
+
+import com.b66k.www.domain.BookVO;
+import com.b66k.www.domain.PagingVO;
+
+public interface BookDAO {
+
+	int register(BookVO bvo);
+
+	List<BookVO> list();
+
+	BookVO detail(int bno);
+
+	int modify(BookVO bvo);
+
+	int delete(int bno);
+
+	List<BookVO> selectListPaging(PagingVO pvo);
+
+	int totalCount(PagingVO pvo);
+
+}

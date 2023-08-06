@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.b66k.www.repository.BookOrderDAO">
+	<insert id="registerOrder">
+		insert into bookorder(id, total, name, address_code,
+		address_juso, address_detail, pay_type, etc, order_status)
+		values(#{id}, #{total}, #{name}, #{addressCode}, #{addressJuso},
+		#{addressDetail}, #{payType}, #{etc}, "결제완료");
+	</insert>
+	<select id="selectOno" resultType="int">
+		select max(ono) from
+		bookorder;
+	</select>
+	<insert id="registerOrderItems">
+		insert into bookorderitems(ono, bno, title, price,
+		count)
+		values(#{ono},#{bno},#{title},#{price},#{count});
+	</insert>
+	<select id="getOrderList" resultType="bovo">
+		select * from bookorder
+		where id=#{id};
+	</select>
+	<select id="getOrderItems"
+		resultType="com.b66k.www.domain.BookOrderItemVO">
+		select * from bookorderitems where ono=#{ono};
+	</select>
+	<select id="getorder" resultType="bovo">
+		select * from bookorder where
+		ono=#{ono};
+	</select>
+	<update id="ordercancle">
+		update bookorder set order_status="주문취소" where
+		ono=#{ono};
+	</update>
+	<update id="ordermodify">
+		update bookorder set name=#{name},
+		address_code=#{addressCode} , address_juso=#{addressJuso},
+		address_detail=#{addressDetail} , etc=#{etc} where ono=#{ono};
+	</update>
+	<select id="getAllOrderList" resultType="bovo">
+		select * from bookorder;
+	</select>
+	<update id="saleAmountPlus">
+		update book set sale_amount=sale_amount+#{count},
+		amount=amount-#{count}
+		where bno=#{bno};
+	</update>
+	<update id="saleAmountMinus">
+		update book set sale_amount=sale_amount-#{count},
+		amount=amount+#{count}
+		where bno=#{bno};
+	</update>
+</mapper>

@@ -1,0 +1,48 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>검색리스트</title>
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+<link rel="stylesheet" type="text/css"
+	href="/resources/css/searchlist.css">
+</head>
+<body>
+	<jsp:include page="../layout/header.jsp"></jsp:include>
+
+
+	<div class="searchMain">
+		<div class="searchContent">
+			<div class="searchBox">
+
+				<div class="searchResult">
+					<c:forEach items="${list}" var="bdto">
+						<div class="searchResultBox">
+							<img class="titlePic" alt="표지가 없어요"
+								src="/upload/bookCover/${fn: replace(bdto.bivo.saveDir, '\\','/')}/${bdto.bivo.uuid }_${bdto.bivo.fileName}">
+							<div class="content">
+								<p>${bdto.bvo.title}</p>
+								<p>${bdto.bvo.author}</p>
+								<p>${bdto.bvo.price}</p>
+								<p>${bdto.bvo.ratingAvg}</p>
+							</div>
+						</div>
+					</c:forEach>
+				</div>
+
+			</div>
+
+
+		</div>
+
+
+	</div>
+
+	<jsp:include page="../layout/footer.jsp"></jsp:include>
+</body>
+</html>

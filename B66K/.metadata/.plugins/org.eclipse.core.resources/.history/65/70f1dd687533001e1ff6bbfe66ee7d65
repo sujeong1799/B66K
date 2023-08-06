@@ -1,0 +1,191 @@
+@charset "UTF-8";
+
+* {
+	box-sizing: border-box;
+}
+
+*::after::before {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+
+.orderContent{
+	width: 100%;
+	height: 900px;
+}
+
+.profileNav {
+	width: 300px;
+	height: 560px;
+	border-radius: 10px;
+	top: 155px;
+	left: 300px;
+	position: absolute;
+	float: left;
+	clear: both;
+}
+
+.ProfileImg {
+	width: 210px;
+	height: 210px;
+	border-radius: 50%;
+	border: 5px solid #faa307;
+	background-color: #faa307;
+	margin-left: 50px;
+	position: absolute;
+	top: 30px;
+}
+
+.userImg {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+}
+
+.userNickName {
+	font-size: 15px;
+	position: absolute;
+	top: 48%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: #969696;
+}
+
+.profileNavArea {
+	position: absolute;
+	width: 300px;
+	height: 253px;
+	/* background-color: black; */
+	/* border : 1px solid black; */
+	top: 300px;
+}
+
+.profileNav ul, li {
+	margin: 0;
+	padding: 0;
+}
+
+.profileNav li a {
+	color: #969696;
+	display: block;
+	height: 50px;
+	text-align: center;
+	font-size: 15px;
+	text-decoration: none;
+}
+
+.profileNav ul {
+	text-align: center;
+}
+
+.profileNav ul>li {
+	width: 100%;
+	height: 50px;
+	/* border-bottom: 1px solid #828080; */
+	list-style: none;
+	color: black;
+	/* 	line-height: 30px; */
+	display: inline-block;
+	line-height: 45px;
+	transition: all 0.2s ease-out;
+}
+
+.profileNav ul>li:last-child {
+	border-bottom: none;
+	border-radius: 0 0 4px 4px;
+	-webkit-border-radius: 0 0 4px 4px;
+}
+
+.profileNav ul>li>a {
+	/* border-left: 8px solid #bcbcbc; */
+	
+}
+
+.profileNav ul>li>a:hover, .profileNav ul>li>a:focus, .profileNav ul li.active a
+	{
+	background: #f8f7f5 !important;
+	border-left: 8px solid #faa307;
+	color: #89817f;
+	transition: all 0.2s ease-out;
+}
+
+/* profileNav icon */
+.userInfo {
+	position: absolute;
+	left: 60px;
+	top: 10px;
+}
+
+.userInfoEdit {
+	position: absolute;
+	left: 60px;
+	top: 60px;
+}
+
+.userWishList {
+	position: absolute;
+	left: 60px;
+	top: 110px;
+}
+
+.userBookOrder {
+	position: absolute;
+	left: 60px;
+	top: 160px;
+}
+
+.userWithdrawal {
+	position: absolute;
+	left: 60px;
+	top: 210px;
+}
+
+/* 주문리스트 시작 */
+.orderListBox {
+	/* 	background-color: green; */
+	width: 550px;
+	height: 600px;
+	display: inline-block;
+	position: absolute;
+	left: 800px;
+	top: 200px;
+}
+
+.orderListText {
+	width: 100%;
+	height: 100px;
+	cursor: default;
+}
+
+.listText {
+		position : absolute;
+	font-size: 28px;
+	left: 10px;
+	top: -2px;
+}
+
+.listLine {
+	position : absolute;
+	top: 35px;
+	width: 100%;
+	height: auto;
+}
+
+.userOrderList {
+	width : 100%;
+	/* background-color : blue; */
+	font-size: 15px;
+	color: #969696;
+	position : absolute;
+	top: 80px;
+}
+
+.orderListTitle{
+	text-decoration: none;
+	color: black;
+}

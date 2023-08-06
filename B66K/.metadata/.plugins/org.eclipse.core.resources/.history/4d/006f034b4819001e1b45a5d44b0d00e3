@@ -1,0 +1,9 @@
+package com.b66k.www.service;
+
+import javax.inject.Inject;
+
+public class CartServiceImpl implements CartService {
+	
+	@Inject
+	private CartDAO cdao;
+}

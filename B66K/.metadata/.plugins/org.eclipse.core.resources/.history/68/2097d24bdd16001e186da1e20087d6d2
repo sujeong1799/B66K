@@ -1,0 +1,46 @@
+package com.b66k.www.controller;
+
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.b66k.www.domain.FavoriteVO;
+import com.b66k.www.domain.UserVO;
+import com.b66k.www.service.FavoriteService;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+@RequestMapping("/favorite/*")
+@Controller
+public class FavoriteController {
+	
+	private FavoriteService fsv;
+	
+	// 찜목록 보기(getmapping으로 뿌려주기)
+	@GetMapping("/list")
+	public String Getlist(Model m, HttpServletRequest request) {
+		UserVO uvo = (UserVO)request.getSession().getAttribute("ses");
+		String id = uvo.getId();
+		log.info("로그인 세션 ID : "+id);
+		List<FavoriteVO> list = fsv.Getlist(id);
+		log.info("가져온 LIST  : "+ list);
+		if(list == null) {
+			m.addAttribute("favoritelist_msg", 0);
+		}else {			
+			m.addAttribute("list" , list);
+		}
+		return "/favorite/list";
+	}
+	
+	// 찜 담기(postmapping)
+	
+	// 찜 물품 삭제(deletemapping)
+	
+	// 
+}

@@ -1,0 +1,151 @@
+@media screen and (min-width:1600px)
+@charset "UTF-8";
+@font-face {
+     font-family: 'S-CoreDream-3Light';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+*{
+     font-family: 'S-CoreDream-3Light';
+	
+}
+
+
+body{-ms-overflow-style:none; }
+body::-webkit-scrollbar { display:none; }
+
+.navbar{
+	width: 100%;
+	background-color: #212529;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+.headerBtn{
+	background: #212529;
+	color: white;
+}
+
+.headerBtn > span{
+	color: white;
+}
+
+.navbar-brand {
+	color: white;
+	text-decoration: none;
+}
+
+
+.navbar-brand:hover {
+	color: white;
+}
+
+.navlog {
+	text-decoration: none;
+	margin-right: 20px;
+	color: white;
+}
+
+.navlog:hover {
+	color: white;
+}
+
+.navlog > a:hover {
+	color: white;
+}
+
+.btn-secondary {
+	background-color: black;
+	border: none;
+}
+
+.btn-secondary:hover {
+	background-color: black;
+}
+
+ul, li {
+	list-style: none;
+}
+
+/* 이거추가함. */
+.form-control:focus{
+  box-shadow: none;
+  border: 1px solid black;
+} 
+
+/* 사이드바 */
+
+.SideBar a {
+	text-decoration: none;
+	color: white
+}
+
+.SideBar a:hover {
+	color: white;
+}
+
+.SideBar {
+	width: 300px;
+	height: 900px;
+	float: left;
+	border-right: 1px solid #bcbcbc;
+	background-color: #212529;
+}
+
+.SideBarMain{
+	width: 300px;
+	margin: 30px 0px 0px 0px;
+	background-color: #212529;
+}
+
+.SideBarMain > p{
+	width: 200px;
+	font-size: 30px;
+	margin: 0px auto;
+	color: white;
+	font-weight: bold;
+	
+}
+
+.SideBar .dep1>li {
+	width: 100px;
+}
+
+.SideBar .dep2>li {
+	width: 100px;
+}
+
+.dep2{
+	margin: 0px 0px;
+	padding: 0px 20px;
+}
+
+.dep2 > li:hover{
+	font-weight: bold;
+}
+
+.dep1{
+	margin-left: 50px;
+
+}
+
+.dep1 > li > div{
+	width: 150px;
+	height: 40px;
+	
+}
+
+.dep1 > li > div > span{
+	font-size: 20px;
+	color: #faa307;
+	font-weight: bold;
+}
+
+
+
+/* footer */
+
+.footerDiv{
+	width: 100%;
+	height: 300px;
+}

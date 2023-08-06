@@ -1,0 +1,763 @@
+@charset "UTF-8";
+
+@font-face {
+	font-family: 'Giants-Bold';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/Giants-Bold.woff2')
+		format('woff2');
+	font-weight: 700;
+	font-style: normal;
+}
+
+body, html {
+	margin: 0;
+	padding: 0;
+}
+
+#wrap {
+	width: 100%;
+	height: 100%;
+}
+
+.movieDiv {
+	position: relative;
+	width: 100%;
+	height: 700px; /* 원하는 높이로 설정하세요 */
+	overflow: hidden;
+	display: none;
+}
+
+#mainVideo {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	vertical-align: middle;
+	z-index: 10;
+}
+
+.logo {
+	z-index: 30;
+	position: absolute;
+	left: 50px;
+	top: 500px;
+}
+
+.logo> a > img {
+	width: 450px;
+	height: auto;
+}
+
+.active {
+	display: block;
+}
+
+/* 추가: 버튼 스타일 */
+.slideButton {
+	position: absolute;
+	top: 40%;
+	transform: translateY(-40%);
+	width: 40px; /* 아이콘 크기에 맞게 조정 */
+	height: 40px; /* 아이콘 크기에 맞게 조정 */
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 30px; /* 아이콘 크기에 맞게 폰트 사이즈 조정 */
+	padding: 0; /* 내부 여백 제거 */
+	opacity: 0.8;
+	z-index: 10;
+}
+
+.prevButton {
+	left: 20px;
+}
+
+.nextButton {
+	right: 10px;
+}
+
+/* sound */
+.musicSoundOn {
+	z-index: 30;
+	position: absolute;
+	right: 50px;
+	bottom: 30px;
+	cursor: pointer;
+}
+
+.musicSoundOn>img {
+	width: 100px;
+	height: auto;
+	opacity: 0.7;
+}
+
+.musicSoundOff {
+	z-index: 30;
+	position: absolute;
+	right: 50px;
+	bottom: 30px;
+	cursor: pointer;
+}
+
+.musicSoundOff>img {
+	width: 100px;
+	height: auto;
+	opacity: 0.7;
+}
+
+.musicSoundOn {
+	display: none;
+}
+
+/*1*/
+.musicSoundOn1 {
+	z-index: 30;
+	position: absolute;
+	left: 50px;
+	top: 50px;
+	cursor: pointer;
+}
+
+.musicSoundOn1>img {
+	width: 100px;
+	height: auto;
+}
+
+.musicSoundOff1 {
+	z-index: 30;
+	position: absolute;
+	left: 50px;
+	top: 50px;
+	cursor: pointer;
+}
+
+.musicSoundOff1>img {
+	width: 100px;
+	height: auto;
+}
+
+.musicSoundOn1 {
+	display: none;
+}
+
+/*2*/
+.musicSoundOn2 {
+	z-index: 30;
+	position: absolute;
+	left: 50px;
+	top: 50px;
+	cursor: pointer;
+}
+
+.musicSoundOn2>img {
+	width: 100px;
+	height: auto;
+}
+
+.musicSoundOff2 {
+	z-index: 30;
+	position: absolute;
+	left: 50px;
+	top: 50px;
+	cursor: pointer;
+}
+
+.musicSoundOff2>img {
+	width: 100px;
+	height: auto;
+}
+
+.musicSoundOn2 {
+	display: none;
+}
+
+/* 3 */
+.musicSoundOn3 {
+	z-index: 30;
+	position: absolute;
+	left: 50px;
+	top: 50px;
+	cursor: pointer;
+}
+
+.musicSoundOn3>img {
+	width: 100px;
+	height: auto;
+}
+
+.musicSoundOff3 {
+	z-index: 30;
+	position: absolute;
+	left: 50px;
+	top: 50px;
+	cursor: pointer;
+}
+
+.musicSoundOff3>img {
+	width: 100px;
+	height: auto;
+}
+
+.musicSoundOn3 {
+	display: none;
+}
+
+/* 4 */
+.musicSoundOn4 {
+	z-index: 30;
+	position: absolute;
+	left: 50px;
+	top: 50px;
+	cursor: pointer;
+}
+
+.musicSoundOn4>img {
+	width: 100px;
+	height: auto;
+}
+
+.musicSoundOff4 {
+	z-index: 30;
+	position: absolute;
+	left: 50px;
+	top: 50px;
+	cursor: pointer;
+}
+
+.musicSoundOff4>img {
+	width: 100px;
+	height: auto;
+}
+
+.musicSoundOn4 {
+	display: none;
+}
+
+/*5*/
+.musicSoundOn5 {
+	z-index: 30;
+	position: absolute;
+	left: 50px;
+	top: 50px;
+	cursor: pointer;
+}
+
+.musicSoundOn5>img {
+	width: 100px;
+	height: auto;
+}
+
+.musicSoundOff5 {
+	z-index: 30;
+	position: absolute;
+	left: 50px;
+	top: 50px;
+	cursor: pointer;
+}
+
+.musicSoundOff5>img {
+	width: 100px;
+	height: auto;
+}
+
+.musicSoundOn5 {
+	display: none;
+}
+
+/* 여기부터는 homeContent 영역입니다. */
+.homeContent {
+	width: 100%;
+	margin-top: 50px;
+}
+
+.newBook {
+	
+}
+
+.newBookText {
+	width: 1140px;
+	height: 50px;
+	margin: 0 auto;
+}
+
+.newBookText>span {
+	font-family: 'Giants-Bold';
+	margin-left: 10px;
+	font-size: 28px;
+	font-weight: bold;
+	cursor: default;
+}
+
+.slideNewBook {
+	width: 1140px;
+	height: 370px;
+	position: relative;
+	margin: 0 auto;
+	display: flex; /*슬라이드 박스들을 가로로 배치하기 위해 flex 속성 추가*/
+	align-items: center; /*가로 정렬을 위해 추가*/
+}
+
+/* 슬라이드 버튼 */
+.slideNewBook i {
+	box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+	height: 46px;
+	width: 46px;
+	cursor: pointer;
+	font-size: 1.2rem;
+	text-align: center;
+	line-height: 46px;
+	background: #fff;
+	opacity: 0.8;
+	border-radius: 50px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.slidePrevBtn {
+	left: -20px;
+}
+
+.slideNextBtn {
+	right: -12px;
+}
+
+/* 슬라이드 박스 안 */
+.slideBox {
+	width: 210px;
+	height: 300px;
+	margin: 0px 10px;
+	display: inline-block;
+	transition: transform 0.3s ease;
+}
+
+.slideBox>a>img {
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3)
+		0px 1px 3px -1px;
+	width: 200px;
+	height: 300px;
+}
+
+.slideBox>p {
+	margin: 0px;
+	margin-top: 7px;
+	cursor: default;
+}
+
+.rankArea {
+	width: 100%;
+}
+
+.rankCover {
+	width: 1140px;
+	height: 400px;
+	margin: 70px auto -20px;
+}
+
+.rankSide {
+	width: 220px;
+	height: 350px;
+	float: left;
+}
+
+.rankSide>p {
+	margin-top: 20px;
+	font-family: 'Giants-Bold';
+	font-size: 30px;
+	font-weight: bold;
+	text-align: center;
+	cursor: default;
+	font-family: 'Giants-Bold';
+}
+
+/* 판매순 */
+.saleAmountRank {
+	text-align: center;
+}
+
+.saleAmountContent {
+	width: 910px;
+	height: 350px;
+	display: flex;
+	align-items: center;
+	float: right;
+}
+
+.saleAmountBox {
+	width: 150px;
+	height: 300px;
+	margin: 25px 14px;
+	display: inline-block;
+	position: relative;
+}
+.imgBox {
+	height: 70px;
+	z-index: 10;
+	position: absolute;
+	top: 1440px;
+}
+
+.rank {
+	width: 70px;
+	height: 70px;
+	display: inline-block;
+	margin: 0px 130px 0px -23px;
+}
+
+.rank >img {
+	width: 70px;
+	height: 70px;
+}
+
+.saleAmountBox>a>img {
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3)
+		0px 1px 3px -1px;
+	width: 150px;
+	height: 220px;
+}
+
+.saleAmountBox>p {
+	font-size: 12px;
+	cursor: default;
+}
+
+.saleAmountRankName {
+	width: 220px;
+	height: 50px;
+	text-align: center;
+}
+
+.saleAmountRankName>span {
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 24px;
+}
+
+/* 평점순 */
+.ratingAvgRank {
+	text-align: center;
+	display: none;
+}
+
+.ratingAvgContent {
+	width: 910px;
+	height: 350px;
+	display: flex;
+	align-items: center;
+	display: flex;
+	float: right;
+	margin-left: 10px;
+}
+
+.ratingAvgBox {
+	width: 150px;
+	height: 300px;
+	margin: 0px 16px;
+	display: inline-block;
+	position: relative;
+}
+
+.rank1 {
+	width: 70px;
+	height: 70px;
+	display: inline-block;
+	margin: 0px 130px 0px -23px;
+}
+
+.rank1 >img {
+	width: 70px;
+	height: 70px;
+}
+.ratingAvgBox>a>img {
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3)
+		0px 1px 3px -1px;
+	width: 150px;
+	height: 220px;
+}
+
+.ratingAvgBox>p {
+	font-size: 12px;
+	cursor: default;
+}
+
+.ratinAvgRankName {
+	width: 220px;
+	height: 50px;
+	text-align: center;
+}
+
+.ratinAvgRankName>span {
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 24px;
+	color: #bcbcbc;
+}
+
+/* 리뷰순 */
+.reviewRank {
+	text-align: center;
+	display: none;
+}
+
+.reviewContent {
+	width: 910px;
+	height: 350px;
+	display: flex;
+	align-items: center;
+	float: right;
+	margin-left: 10px;
+	position: relative;
+}
+
+.imgBox2 {
+	display: inline-block;
+	height: 70px;
+	z-index: 10;
+	position: absolute;
+	top:3px;
+}
+
+
+.rank2 {
+	width: 70px;
+	height: 70px;
+	display: inline-block;
+	margin: 0px 130px 0px -23px;
+}
+
+.rank2 >img {
+	width: 70px;
+	height: 70px;
+}
+.reviewBox {
+	width: 150px;
+	height: 300px;
+	margin: 0px 15px;
+	position: relative;
+	display: inline-block;
+}
+
+.reviewBox>a>img {
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3)
+		0px 1px 3px -1px;
+	width: 150px;
+	height: 220px;
+}
+
+.reviewBox>p {
+	font-size: 12px;
+	cursor: default;
+}
+
+.reviewRankName {
+	width: 220px;
+	height: 50px;
+	text-align: center;
+}
+
+.reviewRankName>span {
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 24px;
+	color: #bcbcbc;
+}
+
+/* 랭킹 끝 */
+/* calendar */
+
+.calendarArea{
+   width: 1140px;
+   height : 800px;
+   /* background-color: pink; */
+   margin: 0 auto;
+   
+   border-top : 0.5px solid #bcbcbc;
+   position: relative;
+}
+
+
+
+.calendarArea>span {
+   position : absolute;
+   font-family: 'Giants-Bold';
+   margin-left: 10px;
+   font-size: 28px;
+   font-weight: bold;
+   cursor: default;
+   margin-top: 15px;
+   
+   left: 45px;
+   
+}
+
+
+.calendar{
+   width: 900px;
+   height: auto;
+   margin: 50px auto;
+   
+   position: absolute;
+   left: 200px;
+
+   border-color: #212529;
+   font-family: 'Giants-Bold';
+}
+
+/* .calendar  a{
+   color : black;
+   text-decoration: none;
+   cursor: pointer;
+
+}
+
+.calendar  a:hover{
+   color: #faa307;
+   
+}
+ */
+
+.fc-left h2 {
+    position: absolute;
+    
+      top : -33px;
+      left : 10px;
+      color: #212529;
+      font-family: 'Giants-Bold';
+      cursor: default;
+}
+
+
+
+ .fc-today-button {
+   color: white; 
+   border : none;
+   font-family: 'Giants-Bold';
+   
+ }
+
+
+/*모달창*/
+
+.modal-header{
+   background-color: #212529;
+   color: white;
+   text-align: center;
+}
+
+/*==== title위치========  */
+.modal-title1{
+   text-align: center;
+   cursor: default;
+   margin-left: 120px;
+}
+
+.modal-title2{
+   cursor: default;
+   margin-left: 100px;
+}
+
+.modal-title3{
+   cursor: default;
+   margin-left: 100px;
+}
+
+.modal-title4{
+   cursor: default;
+   margin-left: 35px;   
+}
+
+.modal-title5{
+   cursor: default;
+   margin-left: 130px;   
+}
+
+.modal-title6{
+   cursor: default;
+   margin-left: 55px;   
+}
+
+
+.modal-title7{
+   cursor: default;
+   margin-left: 90px;   
+}
+
+/*=================  */
+
+.productBtn{
+   margin-top : 20px;
+   width: 200px;
+   height: 40px;
+   background-color: #212529;
+   color: white;
+   border: none;
+   border-radius: 4px;
+   margin-left: 135px;
+}
+
+.productBtn:hover {
+   background-color: #faa307;
+   color: white;
+}
+
+
+
+/*달력 칸*/
+table  span{
+   cursor: default;
+}
+
+.fc-event-container{
+   cursor: pointer;
+   height: 80px;
+}
+
+.fc-title{
+   cursor: pointer;
+   height: 50px;
+/*    font-size: 15px;
+   text-align: center; */
+   margin-top: 10px;
+}
+
+.fc-content{
+   height: 50px;
+}
+
+/* 이벤트 */
+
+.mainEventPic {
+	width: 1140px;
+	height: 400px;
+	margin: 0 auto; 
+}
+.mainEventPic > div{
+	display: inline-block;
+	text-align: center;
+}
+
+.eventTop {
+   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 50px;
+    margin-right: 50px;
+    margin-bottom:20px;
+    font-size: 25px;
+    right: 0;
+    z-index: 10000;
+    margin-left: auto;
+    color: #bcbcbc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255,255,255,.9);
+   border: none;
+    cursor: pointer;
+    outline: 0;
+    border-radius: 29px;
+    transition: opacity .4s ease,pointer-events .4s ease,transform .4s ease;
+}
+

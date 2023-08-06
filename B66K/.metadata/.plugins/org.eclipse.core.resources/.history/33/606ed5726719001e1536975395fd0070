@@ -1,0 +1,15 @@
+package com.b66k.www.service;
+
+import java.util.List;
+
+import com.b66k.www.domain.CartVO;
+import com.b66k.www.domain.FavoriteVO;
+
+public interface CartDAO {
+
+	List<FavoriteVO> getList(String id);
+
+	int Register(CartVO cvo);
+
+	
+}

@@ -1,0 +1,992 @@
+@charset "UTF-8";
+
+
+body {
+   margin: 0;
+   padding: 0;
+   font-size: 13px;
+   text-rendering: optimizeLegibility;
+   -webkit-font-smoothing: antialiased;
+   -moz-font-smoothing: antialiased;
+
+}
+
+a {
+   text-decoration: none;
+}
+
+input {
+
+   border-left-width: 0;
+   border-right-width: 0;
+   border-top-width: 0;
+   border-bottom-width: thin;
+   border-color: #7e7e7e;
+   font-size: 17px;
+   
+   padding-bottom: 10px;
+   padding-left: 100px;
+   padding-right: 35px;
+   padding-top: 10px;
+   
+   width : 450px;
+
+
+}
+
+input:focus {
+   outline: none;
+}
+
+
+.wrap {
+   width: 100%;
+   height: 100vh;
+
+   clear: both;
+
+   
+
+}
+
+.profileNav {
+   width: 300px;
+   height: 560px;
+   border-radius: 10px;
+   top: 155px;
+   left: 300px;
+   position: absolute;
+   float: left;
+   
+   clear: both;
+
+
+}
+
+.userProfileImg {
+   width: 210px;
+   height: 210px;
+   border-radius: 50%;
+   border : 5px solid #faa307;
+   background-color: #faa307;
+   margin-left: 50px;
+   position: absolute;
+   top: 30px;
+}
+
+.userImg{
+   width: 200px;
+   height: 200px;
+   border-radius: 50%;
+   
+}
+
+.userNickName {
+   font-size: 15px;
+   position: absolute;
+   top: 48%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   color : #969696;
+}
+
+.profileNavArea {
+   position: absolute;
+   width: 300px;
+   height: 253px;
+   top: 300px;
+}
+
+.profileNav ul, li {
+   margin: 0;
+   padding: 0;
+}
+
+.profileNav li a {
+   color: #969696;
+   display: block;
+   height: 50px;
+   text-align: center;
+   font-size: 15px;
+   text-decoration: none;
+}
+
+.profileNav ul {
+   text-align: center;
+}
+
+.profileNav ul>li {
+   width: 100%;
+   height: 50px;
+   list-style: none;
+   color: black;
+   display: inline-block;
+   line-height: 45px;
+   
+   transition: all 0.2s ease-out;
+}
+
+.profileNav ul>li:last-child {
+   border-bottom: none;
+   border-radius: 0 0 4px 4px;
+   -webkit-border-radius: 0 0 4px 4px;
+}
+
+.profileNav ul>li>a {
+   /* border-left: 8px solid #bcbcbc; */
+}
+
+.profileNav ul>li>a:hover, .profileNav ul>li>a:focus, .profileNav ul li.active a
+   {
+   background: #f8f7f5 !important;
+   border-left: 8px solid #faa307;
+   color: #89817f;
+   
+   transition: all 0.2s ease-out;
+}
+
+/* profileNav icon */
+
+.userInfo {
+   position: absolute;
+   left: 60px;
+   top: 10px;
+}
+
+.userInfoEdit {
+   position: absolute;
+   left: 60px;
+   top: 60px;
+}
+
+.userWishList {
+   position: absolute;
+   left: 60px;
+   top: 110px;
+}
+
+.userBookOrder{
+      position: absolute;
+   left: 60px;
+   top: 160px;
+}
+
+.userWithdrawal {
+   position: absolute;
+   left: 60px;
+   top: 210px;
+}
+
+.userModiLabel{
+   background: #f8f7f5 !important;
+   border-left: 8px solid #faa307;
+   color: #89817f;
+   
+   transition: all 0.2s ease-out;   
+}
+
+/* update div */
+
+.userUpdateArea{
+
+   width: 600px;
+   height: 700px;
+   display: inline-block;
+   position: absolute;
+   
+   left: 800px;
+   top: 200px;
+   
+   
+
+}
+
+.updateTextArea{
+   position : relative;
+   width: 600px;
+   height: 60px;
+}
+
+.updateText{
+   
+   font-size: 28px;
+   position: absolute;
+   left: 10px;
+   top: -3px;
+   
+}
+
+.updateLine{
+
+   top: 35px;
+   position: absolute;
+   width: 100%;
+   height: auto;
+   
+}
+
+.updateArea{
+   width: 600px;
+   height: 600px;
+
+   
+   position: relative;
+}
+
+
+
+.profileText {
+   position: absolute;
+   display: inline-block;
+   top: 80px;
+   left: 82px;
+
+   
+}
+
+#profileModalBtn {
+   position: absolute;
+   left: 30px;
+   /* margin-left: 330px; */
+}
+
+#profileImgDiv {
+   position: absolute;
+   width: 150px;
+   height: 150px;
+   background-color: black;
+   border-radius: 50%;
+   /* background-image: url("/resources/img/엘리자베스.png"); */
+   background-repeat: no-repeat;
+   background-size: cover;
+   cursor: pointer;
+   left: 230px;
+   top: 25px;
+   transition: all 2s;
+   overflow: hidden;
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+   
+}
+
+#profileImgDiv:hover {
+   transition: all 2s;
+   /*      filter: drop-shadow(0 0 2px rgba(0,0,0, 0.4))
+    drop-shadow(0 0 5px rgba(0,0,0, 0.4))
+    drop-shadow(0 0 15px rgba(0,0,0, 0.4)); */
+   /* outline: solid black 10px; */
+   /*     transform : scale(1.2);
+     background-size: 170%; */
+}
+
+.userProfileImgArea{
+    position: absolute;
+   width: 100%;
+   height: 200px;
+   /* background-color: orange; */
+ }
+
+.imgPosition{
+   width: 150px;
+   height: 150px;
+   border-radius: 50%;
+   position: absolute;
+   
+}
+
+.SelecteduserImg{
+   width: 150px;
+   height: 150px;
+   border-radius: 50%;
+   position: absolute;
+
+}
+
+
+/* ===모달창부분====  */
+#modal { /*검정색배경 전체바탕부분임  */
+   position: fixed;
+   z-index: 1;
+   padding-top: 100px;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   overflow: auto;
+   background-color: rgba(0, 0, 0, 0.4);
+   display: none; /*이걸넣어줘야 맨첨에 안뜸..  */
+   
+   z-index: 60;
+   
+}
+
+.modalBody {
+   width: 750px;
+   height: 770px;
+   padding: 30px 30px;
+   margin: 0 auto;
+   border: 1px solid #777;
+   /* background-color: #fff; */
+   background-color : #212529;
+   padding: 0;
+   box-sizing: border-box;
+   border-radius: 5px;
+   
+   z-index: 60;
+   
+}
+
+
+
+
+
+.modalTitle {
+   margin: 0 auto;
+   text-align: center;
+   font-size: 25px;
+   margin-top: 10px;
+/*    background-color: black;
+   color: white; */
+   color: white;
+   
+   cursor: default;
+   
+   z-index: 60;
+}
+
+#closeBtn {
+
+   cursor: pointer;
+float: right; 
+   font-size: 25px;      
+   margin-right: 20px;
+   
+    display : inline-block;
+
+z-index: 60;
+
+}
+
+#closeBtn:hover{
+   color: #faa307;
+}
+
+.wrapper {
+   width: 700px;
+   height: 600px;
+   margin: 0 auto;
+   background-color: #212529;
+   overflow-y: auto;
+   
+   -ms-overflow-style:none;
+   
+   z-index: 60;
+   
+}
+
+.wrapper::-webkit-scrollbar { display:none; }
+
+.title {
+   width: 400px;
+   height: 30px;
+   font-size: 16px;
+   margin-top: 20px;
+   color: white;
+   margin-left: 15px;
+   font-size: 20px;
+   cursor: default;
+   
+   z-index: 60;
+   
+}
+
+.carousel {
+   width: 100%;
+   height: 150px;
+   /* background-color: #93a9d1; */
+   margin-top: 20px;
+   display: flex;
+   /* overflow-x: auto; */
+   white-space: nowrap;
+   overflow: hidden;
+   
+   z-index: 60;
+}
+
+.imgLine {
+   width: 150px;
+   height: 150px;
+   /* background-color: #ac7175; */
+   border-radius: 50%;
+   margin-right: 20px;
+   flex-shrink: 0;
+   position: relative;
+   cursor: pointer;
+   
+   z-index: 60;
+}
+
+.imgBox {
+   width: 150px;
+   height: 150px;
+   background-color: black;
+   border-radius: 50%;
+   margin-right: 5px;
+   flex-shrink: 0;
+   position: relative;
+   cursor: pointer;
+   /* z-index: 9; */
+   
+   z-index: 60;
+}
+
+.imgBox:first-child {
+   margin-left: 20px;
+}
+
+.profile_img {
+/*    vertical-align: middle;
+   appearance: none;
+   z-index: 60; */
+    position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+
+.carousel2 {
+   width: 100%;
+   height: 150px;
+   /* background-color: #93a9d1; */
+   margin-top: 20px;
+   display: flex;
+   overflow-x: auto;
+   white-space: nowrap;
+   overflow: hidden;
+   
+   z-index: 60;
+}
+
+.imgBox2 {
+   width: 150px;
+   height: 150px;
+   background-color: #ac7175;
+   border-radius: 50%;
+   margin-right: 5px;
+   flex-shrink: 0;
+   cursor: pointer;
+   
+   z-index: 60;
+}
+
+.imgBox2:first-child {
+   margin-left: 20px;
+}
+
+
+/*주술회전  */
+
+
+.carousel3 {
+   width: 100%;
+   height: 150px;
+   /* background-color: #93a9d1; */
+   margin-top: 20px;
+   display: flex;
+   overflow-x: auto;
+   white-space: nowrap;
+   overflow: hidden;
+   
+   z-index: 60;
+}
+
+.imgBox3 {
+   width: 150px;
+   height: 150px;
+   background-color: #ac7175;
+   border-radius: 50%;
+   margin-right: 5px;
+   flex-shrink: 0;
+   cursor: pointer;
+   
+   z-index: 60;
+}
+
+.imgBox3:first-child {
+   margin-left: 20px;
+}
+
+/* 나루토  */
+
+.carousel4 {
+   width: 100%;
+   height: 150px;
+   /* background-color: #93a9d1; */
+   margin-top: 20px;
+   display: flex;
+   overflow-x: auto;
+   white-space: nowrap;
+   overflow: hidden;
+   
+   z-index: 60;
+}
+
+.imgBox4 {
+   width: 150px;
+   height: 150px;
+   background-color: #ac7175;
+   border-radius: 50%;
+   margin-right: 5px;
+   flex-shrink: 0;
+   cursor: pointer;
+   
+   z-index: 60;
+}
+
+.imgBox4:first-child {
+   margin-left: 20px;
+}
+
+
+/* 최애의아이  */
+
+.carousel5 {
+   width: 100%;
+   height: 150px;
+   /* background-color: #93a9d1; */
+   margin-top: 20px;
+   display: flex;
+   overflow-x: auto;
+   white-space: nowrap;
+   overflow: hidden;
+   
+   z-index: 60;
+}
+
+.imgBox5 {
+   width: 150px;
+   height: 150px;
+   background-color: #ac7175;
+   border-radius: 50%;
+   margin-right: 5px;
+   flex-shrink: 0;
+   cursor: pointer;
+   
+   z-index: 60;
+}
+
+.imgBox5:first-child {
+   margin-left: 20px;
+}
+
+/* 화산귀환 */
+
+.carousel6 {
+   width: 100%;
+   height: 150px;
+   /* background-color: #93a9d1; */
+   margin-top: 20px;
+   display: flex;
+   overflow-x: auto;
+   white-space: nowrap;
+   overflow: hidden;
+   
+   z-index: 60;
+}
+
+.imgBox6 {
+   width: 150px;
+   height: 150px;
+   background-color: #ac7175;
+   border-radius: 50%;
+   margin-right: 5px;
+   flex-shrink: 0;
+   cursor: pointer;
+   
+   z-index: 60;
+}
+
+.imgBox6:first-child {
+   margin-left: 20px;
+}
+/*======  */
+.imgchoiceBtnArea{
+   width: 750px;
+   height: 60px;
+   /* background-color: black; */
+   position: relative;
+   
+   z-index: 60;
+}
+
+#imgChoiceBtn{
+   position: absolute;
+   left: 260px; 
+   width: 200px;
+   height: 50px;
+   background-color: white;
+   border : 1px solid black;
+   color: black;
+   bottom: 25px;
+   
+   z-index: 60;
+}
+
+#imgChoiceBtn:hover{
+   border: none;
+   background-color: #faa307;
+   color: white;
+   
+}
+
+/*============================================  */
+
+/* id */
+.idArea{
+   position: absolute;
+/*    left: 45px; */
+   height: 70px;
+/*    background: aqua; */
+   width: 100%;
+   top: 200px;
+
+}
+.idText{
+   position: absolute;
+   left: 80px;
+   top: 10px;
+   z-index: 10;
+
+}
+
+.id{
+   position: absolute;
+   left: 70px;
+   cursor:default;
+}
+
+.idArea li{
+
+   float: left;
+   padding-bottom: 5px;
+}
+
+
+/* pw */
+.pwArea{
+   position: absolute;
+/*    left: 45px; */
+   height: 70px;
+/*    background: aqua; */
+   width: 100%;
+   top: 270px;
+
+}
+.pwText{
+   position: absolute;
+   left: 80px;
+   top: 10px;
+   z-index: 10;
+}
+
+.pw{
+   position: absolute;
+   left: 70px;
+}
+
+.pwArea li{
+
+   float: left;
+   padding-bottom: 5px;
+}
+
+.pwMsg{
+   position : absolute;
+   font-size: 13px;
+   left: 170px;
+   top : 48px;
+   color: #969696;
+}
+
+/* pwc */
+
+.pwcArea{
+   position: absolute;
+/*    left: 45px; */
+   height: 70px;
+/*    background: olive; */
+   width: 100%;
+   top: 340px;
+
+}
+.pwcText{
+   position: absolute;
+   left: 80px;
+   top: 10px;
+   z-index: 10;
+
+}
+
+.pwc{
+   position: absolute;
+   left: 70px;
+}
+
+.pwcArea li{
+
+   float: left;
+   padding-bottom: 5px;
+}
+
+.pwCheckMsg{
+   position : absolute;
+   font-size: 13px;
+   left: 170px;
+   top : 48px;
+   color: #969696;
+}
+
+.pwVisibility{
+   position: absolute;
+   right: 80px;
+   cursor: pointer;
+   top: 15px;
+}
+
+.pwVisibility_off{
+   position: absolute;
+   right: 80px;
+   cursor: pointer;
+   top: 15px;
+}
+.pwcVisibility{
+   position: absolute;
+   right: 80px;
+   cursor: pointer;
+   top: 15px;
+}
+
+.pwcVisibility_off{
+   position: absolute;
+   right: 80px;
+   cursor: pointer;
+   top: 15px;
+}
+
+/* email */
+
+.emailArea{
+   position: absolute;
+/*    left: 45px; */
+   height: 70px;
+/*    background: olive; */
+   width: 100%;
+   top: 410px;
+
+}
+.emailText{
+   position: absolute;
+   left: 80px;
+   top: 10px;
+   z-index: 10;
+
+}
+
+.email{
+   position: absolute;
+   left: 70px;
+   cursor: default;
+}
+
+.emailArea li{
+
+   float: left;
+   padding-bottom: 5px;
+}
+
+/* nickname */
+
+.nicknameArea{
+   position: absolute;
+/*    left: 45px; */
+   height: 70px;
+/*    background: olive; */
+   width: 100%;
+   top: 480px;
+
+}
+.nicknameText{
+   position: absolute;
+   left: 80px;
+   top: 10px;
+   z-index: 10;
+
+}
+
+.nickname{
+   position: absolute;
+   left: 70px;
+}
+
+.nicknameArea li{
+
+   float: left;
+   padding-bottom: 5px;
+}
+
+.nickMsg{
+   position : absolute;
+   font-size: 13px;
+   left: 170px;
+   top : 48px;
+   color: #969696;
+}
+
+/* birth */
+
+.birthArea{
+   position: absolute;
+/*    left: 45px; */
+   height: 70px;
+/*    background: olive; */
+   width: 100%;
+   top: 550px;
+
+}
+.birthText{
+   position: absolute;
+   left: 80px;
+   top: 10px;
+   z-index: 10;
+
+}
+
+.birth{
+   position: absolute;
+   left: 70px;
+   cursor: default;
+}
+
+.birthArea li{
+
+   float: left;
+   padding-bottom: 5px;
+}
+
+.btnArea{
+   position: absolute;
+   top: 620px;
+   /* background-color: black; */
+   width: 100%;
+   height: 100px;
+}
+
+.updateBtn{
+   position: absolute;
+   width: 450px;
+   height: 50px;
+   left: 70px;
+   top : 30px;
+   background-color: white;
+   color: black;
+   border : 1px solid #212529;
+
+   border-radius: 4px;
+   
+   transition: all 0.3s ease-out;
+   
+}
+
+.updateBtn:hover{
+   background-color: white;
+   color: black;
+   border : 1px solid #212529;
+   border-radius: 4px;
+   
+   background-color: #212529;
+   color: white;
+   
+   transition: all 0.3s ease-out;
+}
+
+.updateBtn:active{
+   
+}
+
+/* 모달창  */
+
+#userUpdatePopup {
+   position: fixed;
+   z-index: 30;
+   padding-top: 100px;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   overflow: auto;
+   background-color: rgba(0, 0, 0, 0.4);
+   display: none;
+   animation: fadeIn 0.3s ease-in-out;
+   
+}
+
+    @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+
+    @keyframes fadeOut {
+        0% { opacity: 1; }
+        100% { opacity: 0; }
+    }
+    
+.userUpdatePopup_content {
+   width: 350px;
+   height: 120px;
+   padding: 30px 30px;
+   margin: 0 auto;
+   border: 1px solid #777;
+   background-color: #fff;
+   padding: 0;
+   box-sizing: border-box;
+   border-radius: 5px;
+   margin-top: 250px;
+   
+   z-index: 30;
+
+   
+}
+
+.userUpdateModalTitle {
+
+   margin: 0 auto;
+   text-align: center;
+   font-size: 16px;
+   left: 10px;
+   margin-top: 40px;
+   
+   z-index: 30;
+}
+
+.userUpdateCloseBtn {
+   border-top : 1px solid #212529;
+   cursor: pointer;
+   font-size: 20px;
+   background-color: #212529;
+   color: white;
+   height : 50px;
+   margin-top: 40px;
+   border-radius: 0px 0px 5px 5px;
+   
+   z-index: 30;
+}
+
+.userUpdateCloseText{
+   margin-top: 7px;
+   
+   z-index: 30;
+}

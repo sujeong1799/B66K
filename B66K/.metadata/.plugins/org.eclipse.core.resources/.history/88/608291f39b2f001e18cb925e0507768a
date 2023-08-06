@@ -1,0 +1,82 @@
+@charset "UTF-8";
+
+* {
+  box-sizing: border-box;
+}
+
+*::after::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
+.listContent{
+	    width: 100%;
+	    height: 850px;
+	    margin-top: 50px;
+}
+
+.listBox{
+	width:800px;
+	margin: 0px 600px;
+}
+
+.listBox > p{
+	font-size: 30px;
+}
+
+.listSearchBtn{
+	color: #fff;
+    width: 90px;
+    height: 30px;
+    background-color: #212529;
+    border: 1px solid #212529;
+    border-radius: 4px;
+}
+
+.listAddBtn {
+    color: #fff;
+    width: 90px;
+    height: 45px;
+    background-color: #212529;
+    border: 1px solid #212529;
+    border-radius: 4px;
+}
+
+
+.listMainBtn {
+    color: #fff;
+    width: 90px;
+    height: 45px;
+    background-color: #212529;
+    /* border: 1px solid #212529; */
+    border: none;
+    border-radius: 4px;
+}
+
+.pagination .pagination >li{
+   
+   focus-box-shadow: 0 0 0 0.01rem #faa307;
+   color: #212529;
+   border-color: #212529;
+   
+   hover-color: #fff;
+   focus-color: #fff;
+   
+   active-border-color: #212529;
+   hover-border-color: #212529;
+   
+   hover-bg: #212529;
+   focus-bg: #212529;
+       
+           
+   active-color: #fff;
+   active-bg: #fff;
+        
+ 
+   border-radius: 4px;
+}

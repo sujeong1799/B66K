@@ -1,0 +1,43 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+
+<html>
+<head>
+<title>Home</title>
+<link rel="stylesheet" type="text/css" href="../resources/style.css">
+</head>
+<body>
+	<jsp:include page="./layout/header.jsp"></jsp:include>
+
+
+	<a href="/book/homeTest"><button>테스트ㅋ</button></a>
+
+
+	<c:if test="${ses.id != null && ses.id eq 'admin' }">
+		<a href="/book/register"><button>상품등록</button></a>
+		<a href="/book/list"><button>상품리스트</button></a>
+		<a href="/member/admin"><button>관리자페이지</button></a>
+		<a href="/review/list">리스트뽑기</a>
+	</c:if>
+	
+ 						<c:forEach items="${list}" var="bdto">
+						<div>
+							<img alt="표지가 없어요"
+								src="/upload/${fn: replace(bdto.bivo.saveDir, '\\','/')}/${bdto.bivo.uuid }_${bdto.bivo.fileName}">
+								<p>${bdto.bvo.title }</p>
+						</div>
+						</c:forEach>
+	<hr>
+	<br>
+	<br>
+
+	<P>TEST</P>
+
+	<a href="/book/ProdcutDetail?bno=31"> <img class="mainPic"
+		alt="사진 없다." src="/resources/img/1.jpg"></a>
+
+
+</body>
+</html>

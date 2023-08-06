@@ -1,0 +1,19 @@
+package com.b66k.www.service;
+
+import java.util.List;
+
+import javax.inject.Inject;
+
+import com.b66k.www.domain.FavoriteVO;
+
+public class CartServiceImpl implements CartService {
+	
+	@Inject
+	private CartDAO cdao;
+
+	@Override
+	public List<FavoriteVO> GetList(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

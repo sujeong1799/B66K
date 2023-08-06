@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+* {
+	box-sizing: border-box;
+}
+
+*::after::before {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+
+.orderDetailContent{
+	    width: 100%;
+	    height: 860px;
+	    margin-top: 50px;
+}
+
+.orderDetailBox{
+	width:800px;
+	margin: 0px 600px;
+}
+
+
+.orderDetailBox > p{
+	font-size: 30px;
+	color: #212529;
+	font-weight: bold;
+}

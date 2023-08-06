@@ -1,0 +1,9 @@
+package com.b66k.www.service;
+
+import java.util.List;
+
+import com.b66k.www.domain.FavoriteVO;
+
+public interface FavoriteService {
+	public List<FavoriteVO> Getlist(String id);
+}

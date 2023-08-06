@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybist.org//DTD Mapper 3.0//EN"
+	"https://mybatis.org/dtd/mybatis-3-mapper.dtd/">
+<mapper namespace="com.b66k.www.repository.UserDAO">
+<select id="getUser" resultType = "uvo">
+	select * from user where id = #{id}
+</select>
+<select id="getEmailUser" resultType = "uvo">
+	select * from user where email = #{email}
+</select>
+<insert id="insertUser">
+	insert into user (id,pw,email,nickname,birth,uuid) values(#{id},#{pw},#{email},#{nickname},#{birth}, #{uuid})
+</insert>
+<select id="idCheck" resultType="int">
+	select count(*) from user where id = #{id}
+</select>
+<select id="nicknameCheck" resultType="int">
+	select count(*) from user where nickname = #{nickname}
+</select>
+<select id="emailCheck" resultType="int">
+	select count(*) from user where email = #{email}
+</select>
+<select id="getPw" resultType="String">
+	select pw from user where id = #{uvo.id}
+</select>
+<delete id="deleteUser">
+	delete from user where id = #{id}
+</delete>
+<select id="userList" resultType="uvo">
+	select * from user
+</select>
+<select id="userInfo" resultType="uvo">
+	select * from user where id = #{id}
+</select>
+<update id="updateUser">
+	update user set pw = #{pw}, email = #{email}, nickname = #{nickname}, uuid = #{uuid} where id = #{id}
+</update>
+<select id="searchID" resultType="uvo">
+	select * from user where email = #{email}
+</select>
+<select id="findIDResult" resultType="uvo">
+	select id, nickname, email, regDate from user where email = #{email}
+</select>
+<select id="searchPw" resultType="uvo">
+	select * from user where email = #{email}
+</select>
+<update id="setPw">
+	update user set pw = #{pw} where email = #{email}
+</update>
+</mapper>
+

@@ -1,0 +1,329 @@
+@charset "UTF-8";
+
+body, html {
+	margin: 0;
+	padding: 0;
+}
+
+.movieDiv {
+	position: relative;
+	width: 100%;
+	height: 700px; /* 원하는 높이로 설정하세요 */
+	overflow: hidden;
+	display: none;
+}
+
+#mainVideo {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	vertical-align: middle;
+	z-index: 10;
+}
+
+.logo {
+	z-index: 30;
+	position: absolute;
+	left: 50px;
+	top: 500px;
+}
+
+.logo>img {
+	width: 450px;
+	height: auto;
+}
+
+.active {
+	display: block;
+}
+
+/* 추가: 버튼 스타일 */
+.slideButton {
+	position: absolute;
+	top: 40%;
+	transform: translateY(-40%);
+	width: 40px; /* 아이콘 크기에 맞게 조정 */
+	height: 40px; /* 아이콘 크기에 맞게 조정 */
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 30px; /* 아이콘 크기에 맞게 폰트 사이즈 조정 */
+	padding: 0; /* 내부 여백 제거 */
+	opacity: 0.8;
+	z-index: 10;
+}
+
+.prevButton {
+	left: 20px;
+}
+
+.nextButton {
+	right: 10px;
+}
+
+/* sound */
+.musicSoundOn {
+	z-index: 30;
+	position: absolute;
+	right: 50px;
+	bottom: 30px;
+	cursor: pointer;
+}
+
+.musicSoundOn>img {
+	width: 100px;
+	height: auto;
+	opacity: 0.7;
+}
+
+.musicSoundOff {
+	z-index: 30;
+	position: absolute;
+	right: 50px;
+	bottom: 30px;
+	cursor: pointer;
+}
+
+.musicSoundOff>img {
+	width: 100px;
+	height: auto;
+	opacity: 0.7;
+}
+
+.musicSoundOn {
+	display: none;
+}
+
+/*1*/
+.musicSoundOn1 {
+	z-index: 30;
+	position: absolute;
+	left: 50px;
+	top: 50px;
+	cursor: pointer;
+}
+
+.musicSoundOn1>img {
+	width: 100px;
+	height: auto;
+}
+
+.musicSoundOff1 {
+	z-index: 30;
+	position: absolute;
+	left: 50px;
+	top: 50px;
+	cursor: pointer;
+}
+
+.musicSoundOff1>img {
+	width: 100px;
+	height: auto;
+}
+
+.musicSoundOn1 {
+	display: none;
+}
+
+/*2*/
+.musicSoundOn2 {
+	z-index: 30;
+	position: absolute;
+	left: 50px;
+	top: 50px;
+	cursor: pointer;
+}
+
+.musicSoundOn2>img {
+	width: 100px;
+	height: auto;
+}
+
+.musicSoundOff2 {
+	z-index: 30;
+	position: absolute;
+	left: 50px;
+	top: 50px;
+	cursor: pointer;
+}
+
+.musicSoundOff2>img {
+	width: 100px;
+	height: auto;
+}
+
+.musicSoundOn2 {
+	display: none;
+}
+
+/* 3 */
+.musicSoundOn3 {
+	z-index: 30;
+	position: absolute;
+	left: 50px;
+	top: 50px;
+	cursor: pointer;
+}
+
+.musicSoundOn3>img {
+	width: 100px;
+	height: auto;
+}
+
+.musicSoundOff3 {
+	z-index: 30;
+	position: absolute;
+	left: 50px;
+	top: 50px;
+	cursor: pointer;
+}
+
+.musicSoundOff3>img {
+	width: 100px;
+	height: auto;
+}
+
+.musicSoundOn3 {
+	display: none;
+}
+
+/* 4 */
+.musicSoundOn4 {
+	z-index: 30;
+	position: absolute;
+	left: 50px;
+	top: 50px;
+	cursor: pointer;
+}
+
+.musicSoundOn4>img {
+	width: 100px;
+	height: auto;
+}
+
+.musicSoundOff4 {
+	z-index: 30;
+	position: absolute;
+	left: 50px;
+	top: 50px;
+	cursor: pointer;
+}
+
+.musicSoundOff4>img {
+	width: 100px;
+	height: auto;
+}
+
+.musicSoundOn4 {
+	display: none;
+}
+
+/*5*/
+.musicSoundOn5 {
+	z-index: 30;
+	position: absolute;
+	left: 50px;
+	top: 50px;
+	cursor: pointer;
+}
+
+.musicSoundOn5>img {
+	width: 100px;
+	height: auto;
+}
+
+.musicSoundOff5 {
+	z-index: 30;
+	position: absolute;
+	left: 50px;
+	top: 50px;
+	cursor: pointer;
+}
+
+.musicSoundOff5>img {
+	width: 100px;
+	height: auto;
+}
+
+.musicSoundOn5 {
+	display: none;
+}
+
+/* 여기부터는 homeContent 영역입니다. */
+.homeContent {
+	width: 100%;
+	height: 400px;
+}
+
+.newBook {
+	text-align: center;
+}
+
+.newBook>span {
+	font-size: 28px;
+}
+
+.slideNewBook {
+	width: 900px;
+    height: 350px;
+    position: relative;
+    margin: 0 auto;
+    display: flex; /*슬라이드 박스들을 가로로 배치하기 위해 flex 속성 추가*/
+    align-items: center; /*가로 정렬을 위해 추가*/
+}
+
+
+/* 슬라이드 버튼 */
+.slideNewBook i {
+	box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+	height: 46px;
+	width: 46px;
+	cursor: pointer;
+	font-size: 1.2rem;
+	text-align: center;
+	line-height: 46px;
+	background: #fff;
+	opacity: 0.8;
+	border-radius: 50px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.slidePrevBtn {
+    left: -45px;
+}
+
+.slideNextBtn {
+    right: -65px;
+}
+
+/* 슬라이드 박스 안 */
+.slideBox {
+	width: 210px;
+	height: 300px;
+	margin: 0px 10px;
+	display: inline-block;
+	
+}
+
+.slideBox > a > img {
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3)
+		0px 1px 3px -1px;
+	width: 210px;
+	height: 300px;
+}
+
+.slideBox > p {
+	margin: 0px;
+}
+
+.slideBox:first-child {
+	margin-left: 10px;
+}
+
+.slideBox:last-child {
+	margin-right: 10px;
+}

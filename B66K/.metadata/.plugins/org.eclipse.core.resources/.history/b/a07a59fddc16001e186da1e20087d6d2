@@ -1,0 +1,15 @@
+package com.b66k.www.service;
+
+import java.util.List;
+
+import com.b66k.www.domain.FavoriteVO;
+
+public class FavoriteServiceImpl implements FavoriteService{
+
+	@Override
+	public List<FavoriteVO> Getlist(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

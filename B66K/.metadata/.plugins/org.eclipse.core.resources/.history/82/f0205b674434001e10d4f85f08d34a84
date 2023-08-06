@@ -1,0 +1,372 @@
+@media screen and (min-width:1600px)
+@charset "UTF-8";
+@font-face {
+    font-family: 'IBMPlexSansKR-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+*{
+ font-family: 'IBMPlexSansKR-Regular';
+}
+
+body {
+   margin: 0;
+   padding: 0;
+}
+
+body{-ms-overflow-style:none; }
+body::-webkit-scrollbar { display:none; }
+
+.navbar{
+   width: 100%;
+   background-color: #212529;
+   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+a:hover{
+   color: black;
+}
+
+.headerUserNickname{
+   color: white;
+}
+
+.headerUserNickname:after{
+   content: "님";
+}
+
+
+
+.headerLine{
+   position : absolute;
+   border-right: 1px solid #BCBCBC;
+   height: 30px; 
+   width: 1px;
+   left: 140px;
+}
+
+.headerImgIcon{
+   width: 40px;
+   height: 40px;
+   border-radius: 50%;
+   margin-right: 5px;
+}
+
+.headerBtn{
+   background: #212529;
+   color: white;
+}
+
+.headerBtn > span{
+   color: white;
+}
+
+.navbar-brand {
+   color: white;
+   text-decoration: none;
+   margin-left: 20px;
+}
+
+
+.navbar-brand:hover {
+   color: white;
+}
+
+.navbar-brand > img{
+   width: 70px;
+   
+}
+
+.navlog {
+   text-decoration: none;
+   margin-right: 20px;
+   color: white;
+}
+
+.navlog:hover {
+   color: white;
+}
+
+.navlog > a:hover {
+   color: white;
+}
+
+.btn-secondary {
+   background-color: black;
+   border: none;
+}
+
+.btn-secondary:hover {
+   background-color: black;
+}
+
+ul, li {
+   list-style: none;
+}
+
+/* 이거추가함. */
+.form-control:focus{
+  box-shadow: none;
+  border: 1px solid black;
+} 
+
+.userDropdown{
+   
+margin-left: -30px;
+
+}
+
+.adminDropDown{
+   margin-left: -30px;
+}
+
+.dropdown{
+   float: left;
+}
+.headerSearchIcon{
+   width: 30px;
+   height: 30px;
+   z-index: 30;
+   color: white;
+   cursor: pointer;
+   position: absolute;
+   left: 170px;
+   top: 18px;
+   transition : 0.5s ease-out;
+   
+   
+}
+
+.headerSearchIcon:hover{
+   color: #faa307;
+    transition : 0.5s ease-out;
+}
+.headerSearchDiv{
+   position : absolute;
+   width: 200px;
+   height: 30px;
+   /* background-color: red; */
+   display: none;
+   float: left;
+   left: 205px;
+
+
+}
+
+.headerSearch{
+   width: 200px;
+   height: 30px;
+   padding-left: 10px;
+   padding-right : 40px;
+   font-size: 14px;
+   color : white;
+   border-left-width: 0;
+   border-right-width: 0;
+   border-top-width: 0;
+   border-bottom-width: thin;
+   background-color: #212529;
+   z-index: 20;
+   
+}
+
+.headerSearch:focus{
+   outline: none;
+}
+
+
+.headerSearch:-webkit-autofill {
+   -webkit-box-shadow: 0 0 0 1000px #212529 inset;
+   box-shadow: 0 0 0 1000px #212529 inset;
+   color: white;
+}
+
+.headerListSearchBtn{
+   width : 50px;
+   height : 30px;
+   position : absolute;
+   background-color: #212529;
+   border : none;
+   color: white;
+   left: 180px;
+}
+
+.headerListSearchBtn{
+   color: #faa307;
+}
+
+
+/* 유저 닉네임 정보 */
+
+.loginUserInformation{
+   float: left;
+   position: absolute;
+   /* background-color: purple; */
+   right: 200px; 
+   width: 150px;
+   height: 50px;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   top: 10px;
+   color: white;
+}
+
+
+/* 사이드바 */
+
+.SideBar a {
+   text-decoration: none;
+   color: white
+}
+
+.SideBar a:hover {
+   color: white;
+}
+
+.SideBar {
+   width: 300px;
+   /* height: 910px; */
+   float: left;
+   border-right: 1px solid #bcbcbc;
+   background-color: #212529;
+}
+
+.SideBarMain{
+   width: 290px;
+   margin: 30px 0px 0px 0px;
+   background-color: #212529;
+}
+
+.SideBarMain > p{
+   width: 200px;
+   font-size: 30px;
+   margin: 0px auto;
+   color: white;
+   font-weight: bold;
+   
+}
+
+.SideBar .dep1>li {
+   width: 100px;
+}
+
+.SideBar .dep2>li {
+   width: 100px;
+}
+
+.dep2{
+   margin: 0px 0px;
+   padding: 0px 20px;
+}
+
+.dep2 > li:hover{
+   font-weight: bold;
+}
+
+.dep1{
+   margin-left: 50px;
+
+}
+
+.dep1 > li > div{
+   width: 150px;
+   height: 40px;
+   
+}
+
+.dep1 > li > div > span{
+   font-size: 20px;
+   color: #faa307;
+   font-weight: bold;
+}
+
+
+/* footer */
+
+.footerMainDiv{
+  /*  border-top:1px solid #212529; */
+   border-top:1px solid white;
+   box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+   width: 100%;
+   height: 240px;
+   /* background-color: #212529; */
+}
+
+
+.footerContentCover{
+	width: 1400px;
+	height: 200px;
+	margin: 20px auto;
+	display: flex;
+	justify-content: center;
+}
+
+
+
+.footerContentDIv{
+   width: 600px;
+   height: 150px;
+   display: inline-block;
+   margin: 20px 0px;
+   
+   
+}
+
+.footerContent{
+	width: 600px;
+	height: 150px;
+}
+
+.footerContent > p{
+	font-size: 13px;
+}
+
+
+.footerLogoDiv{
+   width: 300px;
+   height: 150px;
+   display: inline-block;
+      margin: 20px 0px;
+   
+
+}
+.footerLogoDivContent{
+	width: 300px;
+	height: 150px;
+}
+
+.footerLogo{
+	width: 90px;
+	height: auto;
+	margin-top: 25%;
+	margin-left: 20%;
+}
+
+
+.footerSideDiv{
+   width: 400px;
+   height: 150px;
+   display: inline-block;
+      margin: 20px 0px;
+   
+}
+
+.footerSideDivContent{
+	width: 400px;
+	height: 50px;	
+	margin-top: 20%;
+	
+	
+}
+.footerSideDivContent > div{
+	width: 70px;
+	
+	display: inline-block;
+}
+
+
+.footerSideDivContent > div > a{
+	text-decoration: none;
+	color: black;
+}

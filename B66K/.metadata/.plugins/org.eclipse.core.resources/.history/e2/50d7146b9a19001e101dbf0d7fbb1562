@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+.mainBig{
+	margin-top: 50px;
+	width: 100%;
+	
+}
+
+.mainL{
+	width: 45%;
+	float: left;
+}
+
+.mainR{
+	width: 45%;
+	float: right;
+	
+}
+
+.productPic{
+	width: 50%;
+	margin-left: 50%;
+}

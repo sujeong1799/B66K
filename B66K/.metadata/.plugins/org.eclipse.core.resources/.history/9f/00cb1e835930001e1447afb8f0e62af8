@@ -1,0 +1,169 @@
+package com.b66k.www.controller;
+
+import java.util.HashMap;
+
+import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.b66k.www.domain.UserVO;
+import com.b66k.www.service.UserService;
+
+import lombok.extern.slf4j.Slf4j;
+
+
+@Slf4j
+@RequestMapping("/member/*")
+@Controller
+public class UserController {
+
+   @Inject
+   private UserService usv;
+   
+   @Inject
+   private BCryptPasswordEncoder passwordEncoder;
+   
+   @GetMapping("/admin")
+   	public String admin() {
+   		return "/user/admin";
+   	}
+   
+   
+     @GetMapping("/signup") 
+     public String signupGet(Model m) {
+        
+     log.info("signup GetMapping....");
+    
+     return "/user/join"; 
+     
+     }
+
+     @PostMapping("/signup")
+     public String signupPost(Model m, UserVO uvo){
+       log.info("회원가입 >>>>> ");
+       int isOk = usv.signup(uvo);
+       if(isOk>0) { 
+          m.addAttribute("msg_signup", 1);
+          log.info("회원가입 성공 >>>>"+uvo.toString());
+       }else {
+         m.addAttribute("msg_signup", 0); 
+       }
+   
+      return "home"; 
+     }
+    
+     @GetMapping("/login")
+     public String loginGet() {
+        return "/user/login";
+     }
+
+     @PostMapping("/login")
+      public String loginPost(Model m, UserVO user, HttpServletRequest request, RedirectAttributes ra) {
+         
+         UserVO isUser = usv.isUser(user.getId(), user.getPw());
+         log.info("로그인 접근 완료"+ user.toString());
+         
+         if( isUser != null) {
+            HttpSession ses = request.getSession();
+            ses.setAttribute("ses", isUser);
+            ses.setMaxInactiveInterval(60*10);
+            log.info("@@@@@@@ses@@@@@@@" + ses.getId());
+            m.addAttribute("user > ", isUser);
+            m.addAttribute("msg_login", 1);
+            log.info("성공");
+            
+         }else {
+            m.addAttribute("msg_login", 0);
+            log.info("실패");
+         }
+         return "redirect:/";
+      }
+     
+   
+     
+     //아이디 중복확인
+     
+     @ResponseBody
+     @RequestMapping(value="/idCheck", method= RequestMethod.POST)
+     public int idCheck(String id) {
+        log.info("user id Check 진입 >>>>");
+        
+        int result = usv.idCheck(id);
+        
+        log.info("id>>>>"+id);
+        log.info("결과값 >>> "+result);
+        
+        return result;
+     }
+   
+     //닉네임 중복확인
+     
+     @ResponseBody
+     @RequestMapping(value="/nicknameCheck", method= RequestMethod.POST)
+     public int nicknameCheck(String nickname) {
+        log.info(">>nickname check 진입 >>>");
+        
+        int result = usv.nicknameCheck(nickname);
+        
+        log.info("nickname >>>"+nickname);
+        log.info("nickname 중복 결과>>"+result);
+        
+        return result;
+     }
+
+     //이메일 중복확인
+     
+     @ResponseBody
+     @RequestMapping(value="/emailCheck", method = RequestMethod.POST)
+     public int emailCheck(String email) {
+        log.info(">>> email check 진입 >>>>");
+        int result = usv.emailCheck(email);
+        log.info("email >>>"+email);
+        log.info("email 중복 결과 >>>"+result);
+        
+        return result;
+     }
+   
+     //이메일 인증
+     
+     @ResponseBody
+     @RequestMapping(value="/mailAuthentication", consumes = MediaType.APPLICATION_JSON_VALUE)
+     public ResponseEntity<String> mailAuthentication(@RequestBody HashMap<String, Object> user){
+      
+        String email = (String)user.get("email");
+        String authNum = usv.emailAuth(email);
+        
+        log.info("이메일 >>> "+user.get("email"));
+        log.info("인증번호 >>>"+authNum);
+        
+        return ResponseEntity.status(HttpStatus.OK).body(authNum);
+     }
+     
+     @GetMapping("/logout")
+     public String logout(Model m, HttpServletRequest request, RedirectAttributes ra) {
+
+        request.getSession().removeAttribute("ses");
+        request.getSession().invalidate();
+
+        // m.addAttribute("msg_logout",1);
+        log.info("logout");
+
+        return "redirect:/";
+     }
+
+   
+}
