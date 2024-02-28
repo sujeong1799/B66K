@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.b66k.www.repository.BookDAO">
+	<!-- 상품 등록 -->
+	<insert id="register">
+		insert into book(title, author, price, amount,
+		releaseDate, contentPage, intro)
+		values(#{title}, #{author}, #{price},
+		#{amount},
+		#{releaseDate}, #{contentPage}, #{intro})
+	</insert>
+
+	<!-- 상품 리스트 출력 -->
+	<select id="list" resultType="bvo">
+		select * from book where isDel =
+		"N"
+	</select>
+
+	<!-- 상품 디테일 출력 -->
+	<select id="detail" resultType="bvo">
+		select * from book where bno =
+		#{bno}
+	</select>
+
+	<!-- 수정 할 상품 정보 출력 -->
+	<select id="modify" resultType="bvo">
+		select * from book where bno =
+		#{bno}
+	</select>
+
+	<!-- 상품 수정 -->
+	<update id="edit">
+		update book set title = #{title}, author = #{author},
+		releaseDate = #{releaseDate}, price = #{price},
+		amount = #{amount},
+		contentPage=#{contentPage}, intro = #{intro}
+		where bno = #{bno}
+	</update>
+
+	<!-- 상품 삭제 -->
+	<update id="delete">
+		update book set isDel = "Y" where bno = #{bno}
+	</update>
+
+
+	<!-- book에 있는 제일 마지막 글 번호 가져오기 -->
+	<select id="selectBno" resultType="int">
+		select max(bno) from book
+	</select>
+
+
+	<!-- 재고량 가져오기 -->
+	<select id="getAmount" resultType="int">
+		select amount from book where
+		bno=#{bno};
+	</select>
+
+
+	<!-- 월간 신간 뽑기 -->
+	<select id="MonthlyNewList" resultType="bvo">
+		select * from book where
+		releaseDate like concat(#{date},'%') and isDel = 'N'
+	</select>
+
+	<!-- 타이틀 검색 -->
+	<select id="TitleSearchList" resultType="bvo">
+		select * from book where
+		title like concat('%',#{keyword},'%') and isDel =
+		'N' ORDER BY
+		CAST(SUBSTRING_INDEX(title, ' ', -1) AS SIGNED) DESC
+	</select>
+
+	<!-- 작가 검색 -->
+	<select id="AuthorSearchList" resultType="bvo">
+		select * from book
+		where author like concat('%',#{keyword},'%') and isDel =
+		'N' ORDER BY
+		CAST(SUBSTRING_INDEX(title, ' ', -1) AS SIGNED) DESC
+	</select>
+
+	<!-- 주문내역 기준 월간 판매량 -->
+	<select id="GetSaleRankingList" resultType="bvo">
+		SELECT book.bno,
+		book.title,
+		SUM(bookorderitems.count) AS total_count
+		FROM bookorderitems
+		JOIN bookorder ON bookorder.ono = bookorderitems.ono
+		JOIN book ON book.bno = bookorderitems.bno
+		WHERE order_status = '결제완료'
+		AND DATE_FORMAT(order_date, '%Y-%m') = #{data}
+		AND book.isDel = 'N'
+		GROUP BY book.bno, book.title
+		ORDER BY total_count DESC
+		LIMIT 5;
+	</select>
+
+	<!-- 만화책 전체 판매량 -->
+	<select id="GetTopSaleAmountList" resultType="bvo">
+		select * from book
+		where isDel='N' order by sale_amount desc limit 5
+	</select>
+
+	<!-- 평점순 -->
+	<select id="GetRatingRankingList" resultType="bvo">
+		select bno, title,
+		ratingAvg from book
+		where isDel='N' order by ratingAvg desc limit 5
+	</select>
+
+	<!-- 리뷰순 -->
+	<select id="GetReviewRankingList" resultType="bvo">
+		SELECT book.bno,
+		book.title,
+		COUNT(review.rno) AS total_count
+		FROM review
+		JOIN book ON
+		book.bno = review.bno
+		WHERE book.isDel = 'N' -- isDel이 'N'인 경우만 가져옴
+		GROUP BY book.bno, book.title
+		ORDER BY total_count DESC
+		LIMIT 5;
+	</select>
+
+	<!-- 상품 페이징 -->
+	<select id="selectListPaging" resultType="bvo">
+		select a.bno, title, author, releaseDate, price, amount, reg_date from
+		(
+		select bno from book where isDel = "N"
+		<include refid="search"></include>
+		order by bno desc
+		limit
+		#{pageStart}, #{qty}
+		) a left join book b
+		on
+		a.bno
+		= b.bno
+	</select>
+	<select id="totalCount" resultType="int">
+		select count(bno) from
+		book where isDel = "N"
+		<include refid="search"></include>
+	</select>
+
+	<!-- 상품 검색 -->
+	<sql id="search">
+		<if test="type != null">
+			<trim prefix="and (" suffix=")" prefixOverrides="OR">
+				<foreach collection="typeToArray" item="type">
+					<trim prefix="OR">
+						<choose>
+							<when test="type == 't'.toString()">
+								title like concat('%', #{keyword}, '%')
+							</when>
+							<when test="type == 'a'.toString()">
+								author like concat('%', #{keyword}, '%')
+							</when>
+							<when test="type == 'p'.toString()">
+								price like concat('%', #{keyword}, '%')
+							</when>
+						</choose>
+					</trim>
+				</foreach>
+			</trim>
+		</if>
+	</sql>
+</mapper>

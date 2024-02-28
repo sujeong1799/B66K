@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    <mapper namespace="com.b66k.www.repository.QuestionDAO">
+    
+    
+   <insert id="register">
+		insert into question(title, id, content)
+		values(#{title}, #{id}, #{content})
+	</insert>
+	
+	
+	<select id="list" resultType="qvo">
+		select * from question where isDel =
+		"N"
+	</select>
+	
+	
+		
+	<select id="myList" resultType="qvo">
+		select * from question where isDel =
+		"N"
+	</select>
+	
+	
+	
+	
+	
+	
+	<select id="ListPaging"
+		resultType="com.b66k.www.domain.QuestionVO">
+		select a.qno, title, id, reg_date from (
+		select qno from question
+		where isDel = "N" <include refid="search"></include>
+		order by qno desc
+		limit
+		#{pageStart}, #{qty}
+		) a left join question b
+		on a.qno = b.qno
+	</select>
+	
+	
+	<select id="detail"
+		resultType="com.b66k.www.domain.QuestionVO">
+		select * from question where qno = #{qno}
+	</select>
+	
+	
+	<select id="selectQno" resultType="int">
+	select max(qno) from Question
+	</select>
+	
+	
+	
+	<select id="totalCount" resultType="int">
+		select count(qno) from
+		question where isDel = "N" <include refid="search"></include>
+	</select>
+	
+	
+		<sql id="search">
+		<if test="type != null">
+			<trim prefix="and (" suffix=")" prefixOverrides="OR">
+				<foreach collection="typeToArray" item="type">
+					<trim prefix="OR">
+						<choose>
+							<when test="type == 't'.toString()">
+								title like concat('%', #{keyword}, '%')
+							</when>
+							<when test="type == 'i'.toString()">
+								id like concat('%', #{keyword}, '%')
+							</when>
+							<when test="type == 'n'.toString()">
+								qno like concat('%', #{keyword}, '%')
+							</when>
+							<when test="type == 'c'.toString()">
+								content like concat('%', #{keyword}, '%')
+							</when>
+						</choose>
+					</trim>
+				</foreach>
+			</trim>
+		</if>
+	</sql>
+	
+	
+	
+	<update id="delete">
+		update question set isDel = "Y" where qno = #{qno}
+	</update>
+	
+	
+    
+    
+    </mapper>

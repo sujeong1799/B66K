@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<setting name="mapUnderscoreToCamelCase" value="true" />
+	</settings>
+	<typeAliases>
+		<typeAlias type="com.b66k.www.domain.UserVO" alias="uvo" />
+		<typeAlias type="com.b66k.www.domain.BookVO" alias="bvo" />
+		<typeAlias type="com.b66k.www.domain.QuestionVO" alias="qvo" />
+		<typeAlias type="com.b66k.www.domain.AnswerVO" alias="avo" />
+		<typeAlias type="com.b66k.www.domain.BookOrderVO" alias="bovo" />
+		<typeAlias type="com.b66k.www.domain.CartVO" alias="cvo" />
+		<typeAlias type="com.b66k.www.domain.FavoriteVO" alias="fvo" />
+		<typeAlias type="com.b66k.www.domain.ReviewVO" alias="rvo" />
+		<typeAlias type="com.b66k.www.domain.BookImgVO" alias="bivo" />
+		<typeAlias type="com.b66k.www.domain.QuestionImgVO" alias="qivo" />
+		<typeAlias type="com.b66k.www.domain.UserImgVO" alias="uivo" />
+		<typeAlias type="com.b66k.www.domain.PagingVO" alias="pvo" />
+		<typeAlias type="com.b66k.www.domain.BookDTO" alias="bdto" />
+		<typeAlias type="com.b66k.www.domain.UpdateReviewDTO" alias="rdto" />
+		<typeAlias type="com.b66k.www.domain.UserDTO" alias="udto" />
+		<typeAlias type="com.b66k.www.domain.UserImgDTO" alias="uidto" />
+		<typeAlias type="com.b66k.www.domain.QuestionDTO" alias="qdto" />
+	</typeAliases>
+</configuration>

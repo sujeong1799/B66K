@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    <mapper namespace="com.b66k.www.repository.FaqDAO">
+    
+    <insert id="register">
+    insert into faq(title, content)
+    values (#{title}, #{content})
+    </insert>
+    
+<!--     <select id="list" resultType="fqvo">
+	select * from faq where isDel = "N"
+	</select> -->
+    
+  
+<!--     <select id="ListPaging"
+		resultType="com.b66k.www.domain.FaqVO">
+		select * from faq where isDel = "N"
+	</select> -->
+    
+    
+    
+    <select id="ListPaging"
+		resultType="com.b66k.www.domain.FaqVO">
+		select * from faq where isDel = "N"
+		order by fno desc
+		limit #{pageStart}, #{qty}
+	</select> 
+    
+    
+    
+    	
+
+		
+		
+		
+		
+    
+    <update id="delete">
+		update faq set isDel = "Y" where fno = #{fno}
+	</update>
+    
+    
+    
+    
+  	<select id="totalCount" resultType="int">
+		select count(fno) from
+		faq where isDel = "N"
+	</select>
+    
+    
+    
+    
+    
+    </mapper>

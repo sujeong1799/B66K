@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    <mapper namespace="com.b66k.www.repository.CartDAO">
+    	<select id="GetList" resultType="cvo">
+    		select * from cart where id=#{id};
+    	</select>
+    	<insert id="Register">
+    		insert into cart(id, bno, title, price, author, count)
+    		values(#{id}, #{bno},#{title},#{price},#{author},#{count});
+    	</insert>
+    	<select id="Check" resultType="int">
+    		select count(*) from cart where bno=#{bno} and id=#{id};
+    	</select>
+    	<delete id="Delete">
+    		delete from cart where id=#{id} and cno=#{cno};
+    	</delete>
+    	<update id="changeCount">
+    		update cart set count=#{count} where cno=#{cno};
+    	</update>
+    	<select id="GetListTobookorder" resultType="com.b66k.www.domain.BookOrderItemVO">
+    		select bno, price, title, count from cart where id=#{id};
+    	</select>
+    	<delete id="cleanList">
+    		delete from cart where id=#{id};
+    	</delete>
+    </mapper>

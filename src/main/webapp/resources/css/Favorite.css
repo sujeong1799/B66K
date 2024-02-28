@@ -1,0 +1,295 @@
+@charset "UTF-8";
+
+* {
+   box-sizing: border-box;
+}
+
+*::after::before {
+   box-sizing: border-box;
+}
+
+body {
+   margin: 0;
+   padding: 0;
+}
+
+
+.favoriteContent{
+   width: 100%;
+   min-height: 100%;
+}
+
+.profileNav {
+   width: 300px;
+   border-radius: 10px;
+   top: 155px;
+   left: 300px;
+   position: absolute;
+   float: left;
+   clear: both;
+   
+}
+
+.ProfileImg {
+   width: 210px;
+   height: 210px;
+   border-radius: 50%;
+   border: 5px solid #faa307;
+   background-color: #faa307;
+   margin-left: 50px;
+   position: absolute;
+   top: 30px;
+}
+
+.userImg {
+   width: 200px;
+   height: 200px;
+   border-radius: 50%;
+}
+
+.userNickName {
+   font-size: 15px;
+   position: absolute;
+   /* top: 148%; */
+   margin-top : 269px;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   color: #969696;
+}
+
+.profileNavArea {
+   position: absolute;
+   width: 300px;
+   height: 253px;
+   /* background-color: black; */
+   /* border : 1px solid black; */
+   top: 300px;
+}
+
+.profileNav ul, li {
+   margin: 0;
+   padding: 0;
+}
+
+.profileNav li a {
+   color: #969696;
+   display: block;
+   height: 50px;
+   text-align: center;
+   font-size: 15px;
+   text-decoration: none;
+}
+
+.profileNav ul {
+   text-align: center;
+}
+
+.profileNav ul>li {
+   width: 100%;
+   height: 50px;
+   /* border-bottom: 1px solid #828080; */
+   list-style: none;
+   color: black;
+   /*    line-height: 30px; */
+   display: inline-block;
+   line-height: 45px;
+   transition: all 0.2s ease-out;
+}
+
+.profileNav ul>li:last-child {
+   border-bottom: none;
+   border-radius: 0 0 4px 4px;
+   -webkit-border-radius: 0 0 4px 4px;
+}
+
+.profileNav ul>li>a {
+   /* border-left: 8px solid #bcbcbc; */
+   
+}
+
+.profileNav ul>li>a:hover, .profileNav ul>li>a:focus, .profileNav ul li.active a
+   {
+   background: #f8f7f5 !important;
+   border-left: 8px solid #faa307;
+   color: #89817f;
+   transition: all 0.2s ease-out;
+}
+
+/* profileNav icon */
+.userInfo {
+   position: absolute;
+   left: 60px;
+   top: 10px;
+}
+
+.userInfoEdit {
+   position: absolute;
+   left: 60px;
+   top: 60px;
+}
+
+.userWishList {
+   position: absolute;
+   left: 60px;
+   top: 110px;
+}
+
+.userBookOrder {
+   position: absolute;
+   left: 60px;
+   top: 160px;
+}
+
+.userWithdrawal {
+   position: absolute;
+   left: 60px;
+   top: 210px;
+}
+
+.userFavLabel{
+      background: #f8f7f5 !important;
+   border-left: 8px solid #faa307;
+   color: #89817f;
+   transition: all 0.2s ease-out;
+}
+
+/* 주문리스트 시작 */
+.favoriteBox {
+   /*    background-color: green; */
+   width: 700px;
+   display: inline-block;
+   margin: 130px 800px;
+
+}
+
+.favoriteDetailText {
+   width: 100%;
+   cursor: default;
+   margin-right: 10px;
+}
+
+.favoriteDetailText > p {
+   margin-left: 10px;
+   margin-top: 5px;
+}
+
+.favoritedetailText {
+   font-size: 28px;
+   left: 10px;
+   top: -2px;
+}
+
+.detailLine {
+   top: 35px;
+   width: 100%;
+}
+
+.userfavorite {
+   width : 700px;
+   /* background-color : blue; */
+   font-size: 15px;
+   color: #969696;
+}
+
+
+
+.favoriteTable{
+   width: 100%;
+   
+}
+
+th > a{
+   text-decoration: none;
+   color: black;
+}
+
+.bookimg{
+   width: 70px;
+   height: 100px;
+   margin-left: 40px;
+}
+
+.bookTitle{
+   margin-left: 20px;
+}
+
+.CartRegisterBtn{
+   cursor: pointer;
+}
+.FavoriteDeleteBtn{
+   margin-left: 30px;
+   cursor: pointer;
+}
+
+
+#popup {
+   position: fixed;
+   z-index: 30;
+   padding-top: 100px;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   overflow: auto;
+   background-color: rgba(0, 0, 0, 0.4);
+   display: none;
+   animation: fadeIn 0.3s ease-in-out;
+   
+}
+
+    @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+
+    @keyframes fadeOut {
+        0% { opacity: 1; }
+        100% { opacity: 0; }
+    }
+    
+.popup_content {
+   width: 350px;
+   height: 120px;
+   padding: 30px 30px;
+   margin: 0 auto;
+   border: 1px solid #777;
+   background-color: #fff;
+   padding: 0;
+   box-sizing: border-box;
+   border-radius: 5px;
+   margin-top: 250px;
+   
+   z-index: 30;
+
+   
+}
+
+.popupModalTitle {
+
+   margin: 0 auto;
+   text-align: center;
+   font-size: 16px;
+   left: 10px;
+   margin-top: 40px;
+   
+   z-index: 30;
+}
+
+.popupCloseBtn {
+   border-top : 1px solid #212529;
+   cursor: pointer;
+   font-size: 20px;
+   background-color: #212529;
+   color: white;
+   height : 50px;
+   margin-top: 40px;
+   border-radius: 0px 0px 5px 5px;
+   
+   z-index: 30;
+}
+
+.popupCloseText{
+   margin-top: 7px;
+   
+   z-index: 30;
+}
